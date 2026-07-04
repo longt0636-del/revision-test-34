@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vở Ôn Tập IELTS — LongIELTS</title>
+<style>
+  :root{
+    --paper:#FBF7EF;
+    --paper-line:rgba(90,140,190,0.22);
+    --margin-red:#B23B34;
+    --ink:#2A241E;
+    --ink-soft:#6B6154;
+    --accent:#2B4C7E;
+    --accent-soft:#E7EEF7;
+    --amber:#B0740F;
+    --amber-soft:#F7ECD6;
+    --good:#2F7A4D;
+    --good-soft:#E4F3E8;
+    --bad:#C0392E;
+    --bad-soft:#FBEAE7;
+    --card-shadow: 0 1px 2px rgba(42,36,30,0.06), 0 8px 24px rgba(42,36,30,0.07);
+    --radius: 14px;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --paper:#1B2620;
+      --paper-line:rgba(160,200,180,0.13);
+      --margin-red:#C97A6B;
+      --ink:#EDEAE0;
+      --ink-soft:#AEBDB2;
+      --accent:#8FC1D9;
+      --accent-soft:#22343B;
+      --amber:#E0B84A;
+      --amber-soft:#3A3120;
+      --good:#7FCB8E;
+      --good-soft:#22392A;
+      --bad:#E38176;
+      --bad-soft:#3A2422;
+      --card-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px rgba(0,0,0,0.35);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1B2620;
+    --paper-line:rgba(160,200,180,0.13);
+    --margin-red:#C97A6B;
+    --ink:#EDEAE0;
+    --ink-soft:#AEBDB2;
+    --accent:#8FC1D9;
+    --accent-soft:#22343B;
+    --amber:#E0B84A;
+    --amber-soft:#3A3120;
+    --good:#7FCB8E;
+    --good-soft:#22392A;
+    --bad:#E38176;
+    --bad-soft:#3A2422;
+    --card-shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px rgba(0,0,0,0.35);
+    color-scheme: dark;
+  }
+  :root[data-theme="light"]{
+    --paper:#FBF7EF;
+    --paper-line:rgba(90,140,190,0.22);
+    --margin-red:#B23B34;
+    --ink:#2A241E;
+    --ink-soft:#6B6154;
+    --accent:#2B4C7E;
+    --accent-soft:#E7EEF7;
+    --amber:#B0740F;
+    --amber-soft:#F7ECD6;
+    --good:#2F7A4D;
+    --good-soft:#E4F3E8;
+    --bad:#C0392E;
+    --bad-soft:#FBEAE7;
+    --card-shadow: 0 1px 2px rgba(42,36,30,0.06), 0 8px 24px rgba(42,36,30,0.07);
+    color-scheme: light;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(ellipse at top, color-mix(in srgb, var(--paper) 96%, var(--ink) 4%), var(--paper) 55%);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans","Helvetica Neue",Arial,sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+  .mono{font-family:ui-monospace,"Cascadia Code","SFMono-Regular",Consolas,Menlo,monospace;}
+
+  .wrap{max-width:880px;margin:0 auto;padding:22px 18px 64px;}
+
+  .topbar{
+    display:flex;align-items:flex-end;justify-content:space-between;gap:16px;
+    padding:6px 4px 18px;
+    border-bottom:2px solid color-mix(in srgb, var(--ink) 12%, transparent);
+    margin-bottom:16px;
+    flex-wrap:wrap;
+  }
+  .brand{display:flex;align-items:center;gap:14px;}
+  .brand-mark{
+    font-size:30px;
+    width:48px;height:48px;flex:none;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--accent-soft);
+    color:var(--accent);
+    border-radius:50%;
+  }
+  .brand h1{
+    font-size:1.5rem;margin:0 0 2px;letter-spacing:0.01em;
+    text-wrap:balance;
+  }
+  .brand p{margin:0;color:var(--ink-soft);font-size:0.85rem;}
+  .score-badge{
+    font-family:ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;
+    font-size:0.95rem;font-weight:600;
+    background:var(--amber-soft);color:var(--amber);
+    padding:8px 14px;border-radius:999px;
+    white-space:nowrap;
+  }
+
+  .back-pill{
+    display:inline-flex;align-items:center;gap:6px;
+    font-size:0.82rem;font-weight:700;padding:7px 14px;margin-bottom:12px;
+    background:transparent;border:2px solid color-mix(in srgb, var(--ink) 18%, transparent);
+    border-radius:999px;color:var(--ink-soft);cursor:pointer;
+  }
+  .back-pill:hover{color:var(--ink);border-color:var(--accent);}
+
+  .tabs{
+    display:flex;gap:6px;flex-wrap:wrap;
+    margin-bottom:-2px;position:relative;z-index:1;
+  }
+  .tab{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",sans-serif;
+    font-size:0.86rem;font-weight:600;
+    color:var(--ink-soft);
+    background:color-mix(in srgb, var(--paper) 80%, var(--ink) 6%);
+    border:2px solid color-mix(in srgb, var(--ink) 12%, transparent);
+    border-bottom:none;
+    padding:9px 16px 11px;
+    border-radius:10px 10px 0 0;
+    cursor:pointer;
+    transform:translateY(2px);
+    transition:transform 0.15s ease, color 0.15s ease, background 0.15s ease;
+  }
+  .tab:hover{color:var(--ink);}
+  .tab.active{
+    color:var(--accent);
+    background:var(--paper);
+    border-color:color-mix(in srgb, var(--ink) 12%, transparent);
+    transform:translateY(0);
+  }
+  .tab:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:3px solid var(--accent);outline-offset:2px;
+  }
+
+  .page{
+    position:relative;
+    background:
+      repeating-linear-gradient(var(--paper) 0 34px, var(--paper-line) 34px 35px, var(--paper) 35px 36px),
+      var(--paper);
+    border:2px solid color-mix(in srgb, var(--ink) 12%, transparent);
+    border-radius:0 var(--radius) var(--radius) var(--radius);
+    box-shadow:var(--card-shadow);
+    min-height:420px;
+    overflow:hidden;
+  }
+  .page.home{border-radius:var(--radius);}
+  .page::before{
+    content:"";
+    position:absolute;top:0;bottom:0;left:46px;width:2px;
+    background:var(--margin-red);opacity:0.55;
+  }
+  .page.home::before{content:none;}
+  .page-inner{padding:28px 26px 30px 78px;}
+  .page.home .page-inner{padding:28px 26px 30px 26px;}
+  @media (max-width:600px){
+    .page-inner{padding:22px 16px 26px 34px;}
+    .page::before{left:18px;}
+    .page.home .page-inner{padding:22px 16px 26px 16px;}
+  }
+
+  h2.section-title{
+    font-weight:800;
+    font-size:1.3rem;margin:0 0 4px;text-wrap:balance;
+  }
+  p.section-desc{margin:0 0 18px;color:var(--ink-soft);font-size:0.92rem;max-width:60ch;}
+
+  .test-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-top:6px;}
+  .test-card{
+    position:relative;text-align:left;cursor:pointer;font:inherit;color:inherit;
+    background:color-mix(in srgb, var(--paper) 90%, var(--ink) 10%);
+    border:2px solid color-mix(in srgb, var(--ink) 14%, transparent);
+    border-radius:12px;padding:18px 16px 16px;
+    display:flex;flex-direction:column;gap:4px;
+    transition:transform 0.15s ease, border-color 0.15s ease;
+  }
+  .test-card:not(.locked):hover{transform:translateY(-3px);border-color:var(--accent);}
+  .test-card.locked{opacity:0.55;cursor:not-allowed;}
+  .test-num{font-family:Georgia,"Iowan Old Style","Noto Serif",Cambria,serif;font-size:1.9rem;color:var(--accent);font-weight:700;line-height:1;}
+  .test-sub{font-size:0.82rem;color:var(--ink-soft);margin:0;}
+  .test-status{
+    position:absolute;top:16px;right:16px;font-size:0.66rem;font-weight:700;text-transform:uppercase;
+    letter-spacing:0.04em;padding:3px 9px;border-radius:999px;
+  }
+  .test-status.ready{background:var(--good-soft);color:var(--good);}
+  .test-status.soon{background:color-mix(in srgb, var(--ink) 12%, transparent);color:var(--ink-soft);}
+
+  .choose-hint{font-size:0.85rem;font-weight:700;color:var(--amber);margin:0 0 10px;}
+  .chip-group{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+  .chip{
+    font-size:0.84rem;font-weight:600;
+    padding:7px 13px;border-radius:999px;
+    border:2px solid color-mix(in srgb, var(--ink) 16%, transparent);
+    background:transparent;color:var(--ink-soft);
+    cursor:pointer;transition:all 0.15s ease;
+  }
+  .chip.selected{
+    background:var(--accent);border-color:var(--accent);color:var(--paper);
+  }
+
+  .btn{
+    font-family:inherit;font-size:0.92rem;font-weight:700;
+    padding:11px 20px;border-radius:9px;border:2px solid transparent;
+    cursor:pointer;transition:transform 0.1s ease, filter 0.15s ease;
+  }
+  .btn:active{transform:translateY(1px);}
+  .btn-primary{background:var(--accent);color:var(--paper);}
+  .btn-primary:hover{filter:brightness(1.08);}
+  .btn-primary:disabled{opacity:0.45;cursor:not-allowed;}
+  .btn-ghost{background:transparent;border-color:color-mix(in srgb, var(--ink) 22%, transparent);color:var(--ink);}
+  .btn-ghost:hover{background:color-mix(in srgb, var(--ink) 6%, transparent);}
+  .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;}
+
+  .progress-row{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+  .progress-label{font-size:0.8rem;color:var(--ink-soft);white-space:nowrap;font-variant-numeric:tabular-nums;}
+  .progress-track{flex:1;height:6px;border-radius:999px;background:color-mix(in srgb, var(--ink) 10%, transparent);overflow:hidden;}
+  .progress-fill{height:100%;background:var(--accent);border-radius:999px;transition:width 0.3s ease;}
+
+  .pos-tag{
+    display:inline-block;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;
+    color:var(--accent);background:var(--accent-soft);padding:3px 9px;border-radius:6px;margin-bottom:10px;
+  }
+  .book-tag{color:var(--amber);background:var(--amber-soft);}
+
+  .prompt-vn{
+    font-weight:700;
+    font-size:1.5rem;line-height:1.35;margin:0 0 18px;text-wrap:balance;
+  }
+  .prompt-word{
+    font-family:ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;
+    font-size:1.7rem;font-weight:700;margin:0 0 18px;letter-spacing:0.01em;
+  }
+  .prompt-sentence{font-size:1.08rem;margin:0 0 18px;line-height:1.6;max-width:56ch;}
+  .prompt-sentence .blank{
+    font-family:ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;
+    background:var(--accent-soft);color:var(--accent);
+    padding:1px 10px;border-radius:6px;font-weight:700;
+  }
+
+  .text-input{
+    width:100%;max-width:420px;font-family:ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;
+    font-size:1.05rem;padding:12px 14px;border-radius:9px;
+    border:2px solid color-mix(in srgb, var(--ink) 20%, transparent);
+    background:color-mix(in srgb, var(--paper) 92%, var(--ink) 8%);
+    color:var(--ink);
+  }
+  .text-input:disabled{opacity:0.75;}
+  textarea.text-input{width:100%;max-width:none;min-height:78px;resize:vertical;font-family:inherit;font-size:1rem;}
+
+  .mc-list{display:flex;flex-direction:column;gap:10px;max-width:520px;}
+  .mc-opt{
+    text-align:left;font-family:ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;
+    font-size:0.98rem;padding:12px 15px;border-radius:9px;
+    border:2px solid color-mix(in srgb, var(--ink) 16%, transparent);
+    background:color-mix(in srgb, var(--paper) 94%, var(--ink) 6%);
+    color:var(--ink);cursor:pointer;transition:all 0.12s ease;
+    display:flex;gap:10px;align-items:center;
+  }
+  .mc-opt:hover:not(:disabled){border-color:var(--accent);}
+  .mc-opt .letter{font-weight:700;color:var(--ink-soft);}
+  .mc-opt:disabled{cursor:default;}
+  .mc-opt.correct{background:var(--good-soft);border-color:var(--good);color:var(--good);}
+  .mc-opt.incorrect{background:var(--bad-soft);border-color:var(--bad);color:var(--bad);}
+
+  .feedback{
+    margin-top:18px;padding:16px 18px;border-radius:10px;
+    animation:rise 0.25s ease;
+  }
+  @media (prefers-reduced-motion:reduce){ .feedback{animation:none;} }
+  @keyframes rise{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+  .feedback.correct{background:var(--good-soft);border:2px solid color-mix(in srgb, var(--good) 45%, transparent);}
+  .feedback.incorrect{background:var(--bad-soft);border:2px solid color-mix(in srgb, var(--bad) 45%, transparent);}
+  .feedback-head{font-weight:800;font-size:1rem;margin-bottom:6px;display:flex;align-items:center;gap:8px;}
+  .feedback.correct .feedback-head{color:var(--good);}
+  .feedback.incorrect .feedback-head{color:var(--bad);}
+  .feedback-answer{font-family:ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;font-weight:700;margin-bottom:6px;}
+  .feedback-explain{font-size:0.94rem;color:var(--ink);opacity:0.92;line-height:1.55;}
+  .speak-btn{
+    margin-top:10px;font-size:0.82rem;font-weight:700;color:var(--accent);
+    background:none;border:none;cursor:pointer;padding:4px 0;
+  }
+
+  .summary-score{
+    font-weight:800;
+    font-size:2.1rem;margin:0 0 4px;font-variant-numeric:tabular-nums;
+  }
+  .summary-list{list-style:none;margin:18px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;}
+  .summary-item{
+    padding:12px 14px;border-radius:9px;background:color-mix(in srgb, var(--paper) 94%, var(--ink) 6%);
+    border-left:4px solid var(--bad);font-size:0.92rem;
+  }
+  .summary-item b{font-family:ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;}
+  .summary-empty{color:var(--good);font-weight:600;}
+
+  footer.note{
+    max-width:880px;margin:22px auto 0;padding:0 18px;
+    color:var(--ink-soft);font-size:0.78rem;text-align:center;
+  }
+
+  @media (prefers-reduced-motion:reduce){ *{transition-duration:0.01ms !important;} }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">✎</span>
+      <div>
+        <h1 id="appTitle">Vở Ôn Tập IELTS</h1>
+        <p id="appSubtitle">Chọn bài test bên dưới để bắt đầu ôn tập</p>
+      </div>
+    </div>
+    <div class="score-badge" id="scoreBadge" style="display:none">0/0 câu đúng</div>
+  </header>
+
+  <div id="breadcrumbRow"></div>
+  <nav class="tabs" id="tabs"></nav>
+  <main class="page" id="pageWrap"><div class="page-inner" id="page"></div></main>
+</div>
+<footer class="note">Làm đến đâu chấm đến đó — sai không sao, quan trọng là nhớ được sau khi xem giải thích nhé!</footer>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------------- TEST 1 DATA ---------------- */
+
+var VOCAB_T1 = [
+  // Speaking Fundamentals — Unit 1
+  {book:"SF",unit:1,pos:"adj",vn:"Thuận tiện",en:["convenient"]},
+  {book:"SF",unit:1,pos:"adv",vn:"Thật ra thì / thật ra là",en:["actually"]},
+  {book:"SF",unit:1,pos:"v",vn:"Bị kẹt (giao thông)",en:["get stuck"]},
+  {book:"SF",unit:1,pos:"n",vn:"Tắc đường",en:["traffic jam"]},
+  {book:"SF",unit:1,pos:"v",vn:"Đi xe đạp",en:["travel by bike","go by bike","cycling","cycle"]},
+  {book:"SF",unit:1,pos:"v",vn:"Bắt xe buýt",en:["take the bus"]},
+  {book:"SF",unit:1,pos:"n",vn:"Phương tiện giao thông",en:["means of transport"]},
+  {book:"SF",unit:1,pos:"n",vn:"Biểu tượng mặt cười",en:["smiley"]},
+  {book:"SF",unit:1,pos:"adj",vn:"Hòa đồng",en:["sociable"]},
+  {book:"SF",unit:1,pos:"adj",vn:"Vui",en:["fun"]},
+  {book:"SF",unit:1,pos:"n",vn:"Siêu thị",en:["supermarket"]},
+  {book:"SF",unit:1,pos:"n",vn:"Xe buýt công cộng",en:["public bus"]},
+  {book:"SF",unit:1,pos:"v",vn:"Đi quá xa",en:["travel too far"]},
+  {book:"SF",unit:1,pos:"adv",vn:"Thêm vào đó, ngoài ra",en:["also","in addition"]},
+  {book:"SF",unit:1,pos:"adv",vn:"Bên cạnh đó",en:["besides"]},
+  {book:"SF",unit:1,pos:"v",vn:"Khiến ai đó vui hơn",en:["cheer sb up","cheer someone up","cheer up"]},
+  {book:"SF",unit:1,pos:"adj",vn:"Hướng ngoại",en:["outgoing"]},
+  {book:"SF",unit:1,pos:"v",vn:"Tập trung",en:["concentrate"]},
+  {book:"SF",unit:1,pos:"n",vn:"Môi trường",en:["environment"]},
+  {book:"SF",unit:1,pos:"expr",vn:"Mất bao nhiêu thời gian để làm gì (mẫu: It takes + time + to V)",en:["it takes"]},
+
+  // Speaking Fundamentals — Unit 2
+  {book:"SF",unit:2,pos:"n",vn:"Thói quen",en:["habit"]},
+  {book:"SF",unit:2,pos:"v",vn:"Ngủ dậy",en:["wake up"]},
+  {book:"SF",unit:2,pos:"v",vn:"Uống một cốc cà phê",en:["have a cup of coffee"]},
+  {book:"SF",unit:2,pos:"v",vn:"Ôn lại bài học (phần ghi chép)",en:["review one's study notes","review my study notes","review study notes"]},
+  {book:"SF",unit:2,pos:"v",vn:"Đạp xe đến trường",en:["ride one's bike to school","ride my bike to school","ride bike to school"]},
+  {book:"SF",unit:2,pos:"v",vn:"Gặp gỡ / tụ tập với bạn cùng lớp",en:["meet up with classmates","meet up with one's classmates","meet up with my classmates"]},
+  {book:"SF",unit:2,pos:"n",vn:"Hành lang",en:["corridor"]},
+  {book:"SF",unit:2,pos:"v",vn:"Tán gẫu",en:["gossip about","gossip"]},
+  {book:"SF",unit:2,pos:"v",vn:"Về thẳng nhà",en:["go straight home"]},
+  {book:"SF",unit:2,pos:"v",vn:"Đi ngủ",en:["go to bed"]},
+  {book:"SF",unit:2,pos:"expr",vn:"Trong cả tuần",en:["during the week"]},
+  {book:"SF",unit:2,pos:"n",vn:"Lịch đều đặn / thường xuyên",en:["regular schedule"]},
+  {book:"SF",unit:2,pos:"expr",vn:"Trên đường đến / đi đâu đó",en:["on the way to somewhere","on the way to"]},
+  {book:"SF",unit:2,pos:"expr",vn:"Đúng giờ (VD: đúng 8 giờ tối)",en:["sharp"]},
+  {book:"SF",unit:2,pos:"v",vn:"Làm thêm giờ",en:["work overtime"]},
+  {book:"SF",unit:2,pos:"v",vn:"Về đến nhà",en:["get home"]},
+  {book:"SF",unit:2,pos:"v",vn:"Đi chơi với bạn bè",en:["hang out with friends"]},
+  {book:"SF",unit:2,pos:"v",vn:"Đi ăn ngoài (thay vì ăn ở nhà)",en:["go out to eat"]},
+  {book:"SF",unit:2,pos:"v",vn:"Đi dạo",en:["go out for a walk"]},
+  {book:"SF",unit:2,pos:"v",vn:"Đánh bài",en:["play cards"]},
+  {book:"SF",unit:2,pos:"v",vn:"Mỗi người một tay giúp đỡ",en:["pitch in"]},
+  {book:"SF",unit:2,pos:"expr",vn:"Cập nhật về đời sống của nhau",en:["catching up with each other","catch up with each other"]},
+  {book:"SF",unit:2,pos:"v",vn:"Dọn bàn",en:["clear the table"]},
+  {book:"SF",unit:2,pos:"v",vn:"Rửa bát",en:["wash the dishes"]},
+  {book:"SF",unit:2,pos:"v",vn:"Hát karaoke",en:["sing karaoke"]},
+  {book:"SF",unit:2,pos:"v",vn:"Mua đồ ăn vặt",en:["buy some snacks","buy snacks"]},
+  {book:"SF",unit:2,pos:"v",vn:"Đi tập gym",en:["go to the gym"]},
+
+  // Speaking Fundamentals — Unit 3
+  {book:"SF",unit:3,pos:"expr",vn:"Trong thời gian rảnh",en:["in one's spare time","in one's free time","in my spare time","in my free time"]},
+  {book:"SF",unit:3,pos:"adv",vn:"Đặc biệt thích / rất thích",en:["particularly like"]},
+  {book:"SF",unit:3,pos:"v",vn:"Kết hợp cái gì lại với nhau",en:["combine sth with sth","combine with"]},
+  {book:"SF",unit:3,pos:"v",vn:"Làm việc rất chăm chỉ",en:["work really hard"]},
+  {book:"SF",unit:3,pos:"expr",vn:"Vào ban ngày",en:["during the day"]},
+  {book:"SF",unit:3,pos:"v",vn:"Thư giãn và xả stress",en:["relax and unwind"]},
+  {book:"SF",unit:3,pos:"v",vn:"Đi chơi với bạn bè",en:["hang out with friends"]},
+  {book:"SF",unit:3,pos:"v",vn:"Xem các tiết mục biểu diễn",en:["watch gigs"]},
+  {book:"SF",unit:3,pos:"n",vn:"Tiểu thuyết",en:["novel"]},
+  {book:"SF",unit:3,pos:"v",vn:"Liên quan đến / là một phần của cái gì đó",en:["be involved in"]},
+  {book:"SF",unit:3,pos:"adv",vn:"Thi thoảng",en:["sometimes","every so often"]},
+  {book:"SF",unit:3,pos:"v",vn:"Tụ tập",en:["get together"]},
+  {book:"SF",unit:3,pos:"v",vn:"Thảo luận",en:["discuss","discuss sth"]},
+  {book:"SF",unit:3,pos:"n",vn:"Các quyển sách mới ra",en:["latest books"]},
+  {book:"SF",unit:3,pos:"adj",vn:"Hay / phấn khích",en:["exciting","stimulating"]},
+  {book:"SF",unit:3,pos:"n",vn:"Quan điểm",en:["views"]},
+  {book:"SF",unit:3,pos:"adj",vn:"Thuộc về địa phương",en:["local"]},
+  {book:"SF",unit:3,pos:"n",vn:"Địa điểm thu hút khách du lịch",en:["places of interest"]},
+  {book:"SF",unit:3,pos:"v",vn:"Đi ngắm cảnh",en:["go sightseeing"]},
+  {book:"SF",unit:3,pos:"v",vn:"Đăng ký tour có hướng dẫn viên",en:["sign up for guided tours"]},
+  {book:"SF",unit:3,pos:"v",vn:"Chụp ảnh",en:["take photographs","take photos"]},
+  {book:"SF",unit:3,pos:"v",vn:"Nghe nhạc",en:["listen to music"]},
+  {book:"SF",unit:3,pos:"adj",vn:"Thư giãn",en:["relaxing"]},
+  {book:"SF",unit:3,pos:"adj",vn:"Bị xì-trét, căng thẳng",en:["be stressed","stressed"]},
+  {book:"SF",unit:3,pos:"v",vn:"Mở rộng kiến thức",en:["broaden my knowledge","broaden knowledge"]},
+  {book:"SF",unit:3,pos:"expr",vn:"Hầu hết thời gian",en:["most of my time","most of the time"]},
+  {book:"SF",unit:3,pos:"v",vn:"Thăm ông bà",en:["visit my grandparents","visit grandparents"]},
+  {book:"SF",unit:3,pos:"adj",vn:"Thấu hiểu, thông cảm",en:["understanding"]},
+
+  // GAF1 — Unit 1
+  {book:"GAF",unit:1,pos:"num",vn:"Một trăm",en:["a hundred","one hundred"]},
+  {book:"GAF",unit:1,pos:"n",vn:"Trang trại",en:["farm"]},
+  {book:"GAF",unit:1,pos:"v",vn:"Kỳ vọng",en:["expect"]},
+  {book:"GAF",unit:1,pos:"v",vn:"Nuôi trẻ",en:["raise children"]},
+  {book:"GAF",unit:1,pos:"v",vn:"Giáo dục (trẻ con)",en:["educate","educate children","to educate children"]},
+  {book:"GAF",unit:1,pos:"v",vn:"Có đủ tiền làm gì",en:["afford"]},
+  {book:"GAF",unit:1,pos:"n",vn:"Những người khác",en:["others"]},
+  {book:"GAF",unit:1,pos:"n",vn:"Dân số",en:["population"]},
+  {book:"GAF",unit:1,pos:"n",vn:"Số liệu",en:["statistics"]},
+  {book:"GAF",unit:1,pos:"n",vn:"Bố mẹ đơn thân",en:["single parents"]},
+  {book:"GAF",unit:1,pos:"n",vn:"Cặp đôi không cưới",en:["unmarried couples"]},
+  {book:"GAF",unit:1,pos:"adj",vn:"Truyền thống",en:["traditional"]},
+  {book:"GAF",unit:1,pos:"expr",vn:"Ít hơn (nhiều hơn = more than)",en:["less than"]},
+  {book:"GAF",unit:1,pos:"n",vn:"Những phụ nữ đi làm",en:["working women"]},
+  {book:"GAF",unit:1,pos:"v",vn:"Phụ thuộc vào",en:["depend on"]},
+  {book:"GAF",unit:1,pos:"v",vn:"Cưới, kết hôn",en:["be married","get married"]},
+  {book:"GAF",unit:1,pos:"n",vn:"Ly dị",en:["divorce"]},
+  {book:"GAF",unit:1,pos:"n",vn:"Cuộc hôn nhân",en:["marriage"]},
+  {book:"GAF",unit:1,pos:"n",vn:"Chồng và vợ",en:["husband and wife","husband & wife"]},
+  {book:"GAF",unit:1,pos:"expr",vn:"Hơn bao giờ hết",en:["than ever before"]},
+
+  // GAF1 — Unit 2
+  {book:"GAF",unit:2,pos:"n",vn:"Trường trung học",en:["high school"]},
+  {book:"GAF",unit:2,pos:"n",vn:"Tóc tối màu",en:["dark hair"]},
+  {book:"GAF",unit:2,pos:"n",vn:"Cánh tay",en:["arms"]},
+  {book:"GAF",unit:2,pos:"n",vn:"Năng lượng",en:["energy"]},
+  {book:"GAF",unit:2,pos:"n",vn:"Lớp học",en:["classroom"]},
+  {book:"GAF",unit:2,pos:"v",vn:"Giao tiếp",en:["communicate"]},
+  {book:"GAF",unit:2,pos:"v",vn:"Cho phép",en:["allow"]},
+  {book:"GAF",unit:2,pos:"v",vn:"Trình bày, giải thích",en:["demonstrate"]},
+  {book:"GAF",unit:2,pos:"n",vn:"Nghĩa",en:["meaning"]},
+  {book:"GAF",unit:2,pos:"n",vn:"Cử chỉ và hành động",en:["gestures and acting"]},
+  {book:"GAF",unit:2,pos:"prep",vn:"Bên trên",en:["above"]},
+  {book:"GAF",unit:2,pos:"v",vn:"Kéo cái bàn",en:["pull a desk"]},
+  {book:"GAF",unit:2,pos:"n",vn:"Bảng đen",en:["the blackboard","blackboard"]},
+  {book:"GAF",unit:2,pos:"n",vn:"Sọt rác",en:["wastebasket"]},
+  {book:"GAF",unit:2,pos:"expr",vn:"Đặt chân lên rìa …",en:["put his feet on the edge of"]},
+  {book:"GAF",unit:2,pos:"n",vn:"Sự trình bày",en:["demonstration"]},
+  {book:"GAF",unit:2,pos:"expr",vn:"Bằng cách nói tiếng Anh trong lớp",en:["by speaking english in class"]},
+  {book:"GAF",unit:2,pos:"adv",vn:"Bất cứ khi nào",en:["whenever"]},
+  {book:"GAF",unit:2,pos:"v",vn:"Cảm thấy tội lỗi",en:["feel guilty","to feel guilty"]},
+  {book:"GAF",unit:2,pos:"v/n",vn:"Tôn trọng / sự tôn trọng",en:["respect"]},
+  {book:"GAF",unit:2,pos:"n",vn:"Hình mẫu lí tưởng",en:["role model"]},
+
+  // GAF1 — Unit 3
+  {book:"GAF",unit:3,pos:"adj",vn:"Vui",en:["fun"]},
+  {book:"GAF",unit:3,pos:"v",vn:"Giết thời gian",en:["pass time"]},
+  {book:"GAF",unit:3,pos:"n",vn:"Chuyến đi (xe) dài",en:["a long car trip"]},
+  {book:"GAF",unit:3,pos:"expr",vn:"Loại nào… (câu hỏi)",en:["what kind of"]},
+  {book:"GAF",unit:3,pos:"expr",vn:"Khi tôi còn bé / trẻ",en:["when i was young"]},
+  {book:"GAF",unit:3,pos:"expr",vn:"Phần còn lại của …",en:["the rest of"]},
+  {book:"GAF",unit:3,pos:"n",vn:"Câu hỏi Yes/No",en:["yes-or-no questions"]},
+  {book:"GAF",unit:3,pos:"v",vn:"Đi trước / làm trước (theo lượt)",en:["go first","to go first"]},
+  {book:"GAF",unit:3,pos:"n",vn:"Gián điệp",en:["spy"]},
+  {book:"GAF",unit:3,pos:"n",vn:"Lượt",en:["turn"]},
+  {book:"GAF",unit:3,pos:"adv",vn:"Trước (ai/cái gì)",en:["ahead of"]},
+  {book:"GAF",unit:3,pos:"n",vn:"Cư xử tốt",en:["good manners"]},
+  {book:"GAF",unit:3,pos:"v",vn:"Gọi nhau bằng tên xấu / xúc phạm",en:["call people names"]},
+  {book:"GAF",unit:3,pos:"v",vn:"Xin lỗi",en:["apologize"]},
+  {book:"GAF",unit:3,pos:"n",vn:"Vô-lăng",en:["steering wheel"]},
+  {book:"GAF",unit:3,pos:"expr",vn:"Đáng ra / đáng lẽ phải làm gì",en:["be supposed to","to be supposed to"]},
+  {book:"GAF",unit:3,pos:"adv",vn:"Lúc đầu",en:["at first"]},
+  {book:"GAF",unit:3,pos:"v",vn:"Phạm lỗi",en:["make mistakes"]},
+  {book:"GAF",unit:3,pos:"n",vn:"Địa điểm / chỗ / vị trí",en:["location"]},
+  {book:"GAF",unit:3,pos:"v",vn:"Thành công",en:["succeed"]},
+  {book:"GAF",unit:3,pos:"n",vn:"Câu nói",en:["saying"]}
+];
+
+var GRAMMAR_T1 = [
+  {topic:"Prefer",q:"Cấu trúc nào ĐÚNG khi dùng “prefer” với 2 động từ V-ing?",
+   opts:["prefer Ving than Ving","prefer Ving to / rather than Ving","prefer V to V","prefer to Ving rather than V"],ans:1,
+   exp:"“Prefer” đi với V-ing thì dùng “to” hoặc “rather than” ở giữa: prefer V-ing to/rather than V-ing."},
+  {topic:"Prefer",q:"Chọn câu đúng ngữ pháp:",
+   opts:["I prefer to walk rather than take the bus.","I prefer to walk than take the bus.","I prefer walking than taking the bus.","I prefer to walking rather than take bus."],ans:0,
+   exp:"Với “to V”, cấu trúc là: prefer to V rather than V (không dùng “than” một mình, không chia lại V-ing)."},
+  {topic:"Comparatives",q:"“Happy” có 2 âm tiết và kết thúc bằng “-y” — dạng so sánh hơn đúng là?",
+   opts:["happier","more happy","happyer","most happy"],ans:0,
+   exp:"Tính từ 2 âm tiết kết thúc bằng “-y”: đổi “y” thành “i” rồi thêm “-er” → happier."},
+  {topic:"Comparatives",q:"Cấu trúc so sánh KÉM (not as … as) đúng là?",
+   opts:["X is more not as tall as Y","X is not as tall as Y","X is as not tall as Y","X is not tall as as Y"],ans:1,
+   exp:"So sánh kém: X + be + not as + adj + as + Y."},
+  {topic:"Linking words",q:"“Bên cạnh đó” trong tiếng Anh là?",
+   opts:["Actually","Also","Besides","However"],ans:2,
+   exp:"“Besides” = bên cạnh đó. “Actually” = thật ra; “Also/in addition” = thêm vào đó."},
+  {topic:"Linking words",q:"“Thêm vào đó, ngoài ra” trong tiếng Anh là?",
+   opts:["Also / In addition","Besides","Actually","Despite"],ans:0,
+   exp:"“Also” hoặc “In addition” = thêm vào đó, ngoài ra."},
+  {topic:"Adverbs of frequency",q:"Chọn câu đúng vị trí trạng từ tần suất:",
+   opts:["Usually I go to school by bike.","I always go to school by bike.","I go always to school by bike.","Always I go to school by bike."],ans:1,
+   exp:"“Always, often, never…” đứng SAU chủ ngữ và TRƯỚC động từ thường: I always go…"},
+  {topic:"Adverbs of frequency",q:"Trạng từ nào CÓ THỂ đứng ở đầu câu?",
+   opts:["Always","Never","Usually","Rarely"],ans:2,
+   exp:"“Usually, normally, sometimes” linh hoạt hơn — có thể đứng trước hoặc sau chủ ngữ, kể cả đầu câu."},
+  {topic:"Present simple & giờ giấc",q:"“Vào lúc nửa đêm” nói sao?",
+   opts:["at midnight","in midnight","on midnight","at the midnight"],ans:0,
+   exp:"Dùng “at” với dawn/noon/midnight: at dawn, at noon, at midnight."},
+  {topic:"Present simple & giờ giấc",q:"“Vào 8 giờ tối” theo mẫu “at + hour + p.m.” là?",
+   opts:["at 8 p.m.","in 8 p.m.","at 8 o'clock p.m.","on 8 p.m."],ans:0,
+   exp:"Giờ + a.m./p.m. luôn đi với “at”: at 8 p.m. / at 8 in the evening."},
+  {topic:"Sequence markers",q:"Chọn từ đúng: “___ having breakfast, I brush my teeth.”",
+   opts:["Before","After","Then","While"],ans:0,
+   exp:"“Before + V-ing” diễn tả việc xảy ra trước — điểm ngữ pháp cần nhớ: Before + V-ing, clause."},
+  {topic:"Sequence markers",q:"Câu nào dùng ĐÚNG trình tự sequence markers?",
+   opts:["I wake up. Then, I have breakfast. After that, I go to school.","I wake up. After, I have breakfast. Then that, I go to school.","I wake up. Then that, I have breakfast.","I wake up, then having breakfast, after go to school."],ans:0,
+   exp:"Trình tự chuẩn: …, Then + clause. …, After that + clause."},
+  {topic:"Diễn đạt sở thích (Unit 3)",q:"Cấu trúc nào SAI khi diễn đạt “rất thích”?",
+   opts:["be keen on","be interested in","be a big fan of","be similar to"],ans:3,
+   exp:"“Be similar to” nghĩa là “giống với”, không liên quan đến sở thích. 3 cấu trúc còn lại đều đúng nghĩa “rất thích/đam mê”."},
+  {topic:"Diễn đạt sở thích (Unit 3)",q:"Hoàn thành: “I ___ playing football.” (rất đam mê)",
+   opts:["am keen on","am keen to","keen on","am keen for"],ans:0,
+   exp:"Cấu trúc: to be keen on + V-ing."},
+  {topic:"Đại từ it/they",q:"“I like tennis. ___ is a great sport.”",
+   opts:["It","They","This","Those"],ans:0,
+   exp:"“Tennis” là danh từ số ít → dùng “it” để thay thế."},
+  {topic:"Đại từ it/they",q:"“I enjoy video games. ___ are fun.”",
+   opts:["It","They","He","This"],ans:1,
+   exp:"“Video games” số nhiều → dùng “they”."},
+  {topic:"Tính từ -ed / -ing",q:"“This movie is very ___.” (gây hứng thú cho người xem)",
+   opts:["interested","interesting","interest","interestingly"],ans:1,
+   exp:"Vật/sự việc GÂY ra cảm xúc dùng đuôi “-ing”: the movie is interesting."},
+  {topic:"Tính từ -ed / -ing",q:"“I am ___ in this movie.” (cảm thấy hứng thú)",
+   opts:["interesting","interest","interested","interestingly"],ans:2,
+   exp:"Người BỊ tác động bởi cảm xúc dùng đuôi “-ed”: I am interested."}
+];
+
+var STRUCTURE_T1 = [
+  {unit:1,sent:"American families today ___ what they were about a hundred years ago.",
+   opts:["are very different from","are the same as","are similar to","are more than"],ans:0,
+   full:"American families today are very different from what they were about a hundred years ago.",
+   exp:"“Be very different from” = khác rất nhiều so với …"},
+  {unit:1,sent:"Statistics show that there are more single parents ___.",
+   opts:["than ever before","than before ever","that ever before","then ever before"],ans:0,
+   full:"There are more single parents than ever before.",
+   exp:"“…than ever before” = …hơn bao giờ hết."},
+  {unit:1,sent:"___ very expensive to raise and educate children.",
+   opts:["It is becoming","It becomes to","It is become","There is becoming"],ans:0,
+   full:"It is also becoming very expensive to raise and educate children.",
+   exp:"Cấu trúc: It + to be + becoming + adj + to V."},
+  {unit:1,sent:"___ think that there are already too many people in the world.",
+   opts:["Others","The other","Another","Other"],ans:0,
+   full:"Others think that there are already too many people in the world.",
+   exp:"“Others” (số nhiều, đứng đầu câu) = những người khác."},
+  {unit:1,sent:"If they have more than two children, ___ increase the population.",
+   opts:["it will","it is going","it would to","it can to"],ans:0,
+   full:"If they have more than two children, it will increase the population.",
+   exp:"Câu điều kiện loại 1: If + hiện tại đơn, S + will + V."},
+  {unit:1,sent:"Many people decide not to get married. They ___ single.",
+   opts:["prefer to be","prefer being","prefer be","prefer to being"],ans:0,
+   full:"Many people decide not to get married at all. They prefer to be single.",
+   exp:"“Prefer to V” = thích làm gì hơn."},
+  {unit:1,sent:"They prefer to be single and live ___ a husband or a wife.",
+   opts:["without","with no","haven't","no have"],ans:0,
+   full:"They prefer to be single and live without a husband or a wife.",
+   exp:"“Live without” = sống mà không có …"},
+  {unit:2,sent:"He always brought ___ energy to the classroom.",
+   opts:["so much","too much","so many","very much"],ans:0,
+   full:"He always brought so much energy to the classroom.",
+   exp:"“So much + danh từ không đếm được” (energy) = rất nhiều …"},
+  {unit:2,sent:"His classes ___ boring.",
+   opts:["were never","never were","weren't never","didn't never"],ans:0,
+   full:"His classes were never boring.",
+   exp:"Cấu trúc bài học nhấn mạnh: be + never + adj."},
+  {unit:2,sent:"English ___ in class.",
+   opts:["wasn't allowed","didn't allow","wasn't allow","not allowed"],ans:0,
+   full:"English wasn't allowed in class.",
+   exp:"Bị động: be + not + allowed (to)."},
+  {unit:2,sent:"He often ___ demonstrate the meaning of new words.",
+   opts:["had to","has to have","must to","had"],ans:0,
+   full:"He often had to demonstrate the meaning of new words through gestures and acting.",
+   exp:"“Have to V” chia quá khứ: had to V = đã phải làm gì."},
+  {unit:2,sent:"He demonstrated the meaning ___ gestures and acting.",
+   opts:["through","by","with","from"],ans:0,
+   full:"He demonstrated the meaning of new words through gestures and acting.",
+   exp:"“Through + N” = thông qua, bằng (phương tiện/cách thức)."},
+  {unit:2,sent:"He had to communicate the word “above” ___ saying it in English.",
+   opts:["without","no","not","hasn't"],ans:0,
+   full:"He had to communicate the word “above” without saying it in English.",
+   exp:"“Without + V-ing” = mà không làm gì."},
+  {unit:2,sent:"It was difficult ___ enjoy the subject.",
+   opts:["not to","to not","don't to","to no"],ans:0,
+   full:"It was difficult not to enjoy the subject when he was so excited about teaching it.",
+   exp:"Cấu trúc: be + adj + not to V."},
+  {unit:2,sent:"Mr. Lambert is ___ teacher I've ever had.",
+   opts:["the best","a best","more best","the more best"],ans:0,
+   full:"Mr. Lambert is the best teacher I've ever had.",
+   exp:"So sánh nhất: the best + N + S + have ever had."},
+  {unit:2,sent:"He made us angry ___ English in class.",
+   opts:["by speaking","by speak","to speak","for speaking"],ans:0,
+   full:"He made him angry by speaking English in class.",
+   exp:"“By + V-ing” = bằng cách làm gì."},
+  {unit:3,sent:"This is so boring, just sitting back here ___ do.",
+   opts:["with nothing to","with nothing for","without nothing to","no thing to"],ans:0,
+   full:"This is so boring, just sitting back here with nothing to do.",
+   exp:"“With nothing to V” = không có gì để làm."},
+  {unit:3,sent:"___ game can we play?",
+   opts:["What kind of","Which kind","What type is","What sort is"],ans:0,
+   full:"What kind of game can we play?",
+   exp:"“What kind of + N” = loại … nào."},
+  {unit:3,sent:"When I was young, we ___ play a game in the car.",
+   opts:["used to","use to","were used to","was use to"],ans:0,
+   full:"When I was young, we used to play a game in the car.",
+   exp:"“Used to V” = đã từng làm gì (thói quen trong quá khứ, nay không còn)."},
+  {unit:3,sent:"A game in the car ___ “I Spy”.",
+   opts:["called","calling","call","is call"],ans:0,
+   full:"We used to play a game in the car called “I Spy”.",
+   exp:"“N + called + N” = … được gọi là …"},
+  {unit:3,sent:"___ us have to ask yes-or-no questions.",
+   opts:["The rest of","The other of","Rest of","All rest"],ans:0,
+   full:"The rest of us have to ask yes-or-no questions.",
+   exp:"“The rest of + N” = phần còn lại của …"},
+  {unit:3,sent:"The rest of us have to ask questions to try and ___ what it is.",
+   opts:["find out","find of","found out","finding"],ans:0,
+   full:"The rest of us have to ask yes-or-no questions to try and find out what it is.",
+   exp:"“Find out + N” = tìm ra, khám phá ra."},
+  {unit:3,sent:"___ let girls have their turn ahead of us.",
+   opts:["It's considered good manners to","It's consider good manner to","It considers good manners","It's considering good manner"],ans:0,
+   full:"It's considered good manners to let girls have their turn ahead of us.",
+   exp:"“It's considered good manners to V” = người ta cho rằng đó là cư xử tốt khi làm gì."},
+  {unit:3,sent:"It's also good manners to ___ each other with respect.",
+   opts:["treat","respect","care","treating"],ans:0,
+   full:"It's also good manners to treat each other with respect.",
+   exp:"“Treat sb with respect” = đối xử tôn trọng với ai."},
+  {unit:3,sent:"It's good manners to not ___ names.",
+   opts:["call people","calling people","called people","call to people"],ans:0,
+   full:"It's good manners to not call people names.",
+   exp:"“Call people names” = gọi người khác bằng tên xấu/xúc phạm."}
+];
+
+var PHON_POOLS_T1 = {
+  1:["ə","ʌ","e","ɪ"],
+  2:["iː","eɪ","j"],
+  3:["ɒ","ʊ","ɔː","ɜː","uː"]
+};
+var PHONETICS_T1 = [
+  {unit:1,w:"very",sym:"e"},{unit:1,w:"much",sym:"ʌ"},{unit:1,w:"difference",sym:"ɪ"},
+  {unit:1,w:"statistics",sym:"ə"},{unit:1,w:"expect",sym:"ɪ"},{unit:1,w:"number",sym:"ʌ"},
+  {unit:2,w:"teacher",sym:"iː"},{unit:2,w:"always",sym:"eɪ"},{unit:2,w:"students",sym:"j"},
+  {unit:2,w:"meaning",sym:"iː"},{unit:2,w:"demonstrate",sym:"eɪ"},{unit:2,w:"feet",sym:"iː"},
+  {unit:3,w:"boring",sym:"ɔː"},{unit:3,w:"long",sym:"ɒ"},{unit:3,w:"good",sym:"ʊ"},
+  {unit:3,w:"turn",sym:"ɜː"},{unit:3,w:"stupid",sym:"uː"},{unit:3,w:"call",sym:"ɔː"}
+];
+
+var TRANSLATION_T1 = [
+  {vn:"Gia đình Mỹ ngày nay khác rất nhiều so với 100 năm trước.",
+   en:"American families today are very different from what they were a hundred years ago.",
+   note:"Cấu trúc: be very different from (GAF1 Unit 1)."},
+  {vn:"Ngày càng có nhiều bố mẹ đơn thân hơn bao giờ hết.",
+   en:"There are more single parents than ever before.",
+   note:"Cấu trúc: there are more … than ever before."},
+  {vn:"Việc nuôi dạy và giáo dục con cái đang ngày càng trở nên đắt đỏ hơn.",
+   en:"It is becoming more expensive to raise and educate children.",
+   note:"Cấu trúc: It + to be + becoming + adj + to V."},
+  {vn:"Anh ấy luôn mang rất nhiều năng lượng đến lớp học.",
+   en:"He always brought so much energy to the classroom.",
+   note:"Cấu trúc: so much + danh từ không đếm được."},
+  {vn:"Tiếng Anh không được phép sử dụng trong lớp học.",
+   en:"English wasn't allowed in class.",
+   note:"Bị động: be + not allowed (to)."},
+  {vn:"Đôi khi tôi thích đạp xe hơn là bắt xe buýt.",
+   en:"Sometimes I prefer cycling to taking the bus.",
+   note:"Cấu trúc: prefer V-ing to V-ing."},
+  {vn:"Cô ấy hòa đồng hơn tôi rất nhiều.",
+   en:"She is much more sociable than me.",
+   note:"Tính từ 3 âm tiết (sociable) dùng “more” khi so sánh hơn."},
+  {vn:"Vào cuối tuần, tôi thường đi tập gym rồi sau đó đi ăn ngoài với bạn bè.",
+   en:"At the weekend, I usually go to the gym and then go out to eat with friends.",
+   note:"Present simple + sequence marker “then”."},
+  {vn:"Trước khi đi ngủ, tôi luôn ôn lại bài học của mình.",
+   en:"Before going to bed, I always review my study notes.",
+   note:"Sequence marker: Before + V-ing."},
+  {vn:"Vào thời gian rảnh, tôi khá đam mê nghe nhạc và đọc tiểu thuyết.",
+   en:"In my spare time, I'm quite into listening to music and reading novels.",
+   note:"Cấu trúc diễn đạt sở thích: be quite into + V-ing."},
+  {vn:"Khi tôi còn nhỏ, chúng tôi thường chơi trò “I Spy” trong những chuyến đi xe dài.",
+   en:"When I was young, we used to play “I Spy” on long car trips.",
+   note:"Cấu trúc: used to V (thói quen quá khứ)."},
+  {vn:"Cư xử tốt là phải tôn trọng lẫn nhau và không gọi nhau bằng tên xấu.",
+   en:"It's considered good manners to treat each other with respect and not call people names.",
+   note:"Cấu trúc: It's considered good manners to V."}
+];
+
+/* ---------------- TESTS REGISTRY ---------------- */
+
+var TESTS = {
+  test1:{
+    number:"1", label:"Test 1", available:true,
+    subtitle:"Speaking Fundamentals & GAF1 · Unit 1–3",
+    units:[1,2,3],
+    bookLabel:{SF:"Speaking Fundamentals",GAF:"GAF1"},
+    unitLabel:{1:"Unit 1",2:"Unit 2",3:"Unit 3"},
+    vocab:VOCAB_T1, grammar:GRAMMAR_T1, structure:STRUCTURE_T1,
+    phonPools:PHON_POOLS_T1, phonetics:PHONETICS_T1, translation:TRANSLATION_T1
+  },
+  test2:{
+    number:"2", label:"Test 2", available:false,
+    subtitle:"Đang cập nhật nội dung",
+    units:[], bookLabel:{}, unitLabel:{},
+    vocab:[], grammar:[], structure:[], phonPools:{}, phonetics:[], translation:[]
+  },
+  test3:{
+    number:"3", label:"Test 3", available:false,
+    subtitle:"Đang cập nhật nội dung",
+    units:[], bookLabel:{}, unitLabel:{},
+    vocab:[], grammar:[], structure:[], phonPools:{}, phonetics:[], translation:[]
+  }
+};
+var TEST_ORDER = ["test1","test2","test3"];
+
+var SECTIONS = [
+  {key:"vocab",label:"Từ Vựng",desc:"Đọc nghĩa tiếng Việt, gõ lại từ/cụm từ tiếng Anh tương ứng."},
+  {key:"grammar",label:"Ngữ Pháp",desc:"Các chủ điểm ngữ pháp trọng tâm của bài, dạng trắc nghiệm."},
+  {key:"structure",label:"Cấu Trúc GAF1",desc:"Nhận diện cấu trúc câu hay dùng trong các bài đọc GAF1."},
+  {key:"phonetic",label:"Phiên Âm",desc:"Chọn phiên âm trọng tâm xuất hiện trong từ — giống hệt dạng bài Phần 4 của đề thi."},
+  {key:"translate",label:"Dịch Câu",desc:"Dịch câu tiếng Việt sang tiếng Anh, rồi tự đối chiếu với đáp án mẫu và giải thích."}
+];
+
+/* ---------------- STATE ---------------- */
+
+var currentTest = null;
+var activeTab = "vocab";
+var sectionState = {}; // sectionState[testKey][sectionKey] = {...}
+var testScore = {};    // testScore[testKey] = {correct,total}
+
+function CT(){ return TESTS[currentTest]; }
+
+function ensureTestState(testKey){
+  if(sectionState[testKey]) return;
+  var T = TESTS[testKey];
+  sectionState[testKey] = {};
+  SECTIONS.forEach(function(s){
+    sectionState[testKey][s.key] = {
+      phase:"setup",
+      filters:{units:(T.units||[]).slice()},
+      queue:[],idx:0,correct:0,wrong:[],checked:false
+    };
+  });
+  testScore[testKey] = {correct:0,total:0};
+}
+
+/* ---------------- HELPERS ---------------- */
+
+function shuffle(arr){
+  var a = arr.slice();
+  for(var i=a.length-1;i>0;i--){
+    var j = Math.floor(Math.random()*(i+1));
+    var t=a[i];a[i]=a[j];a[j]=t;
+  }
+  return a;
+}
+function normalize(s){
+  return String(s).toLowerCase().normalize("NFC").replace(/[.,!?;:"'’()]/g,"").replace(/\s+/g," ").trim();
+}
+function stripTo(s){ return s.replace(/^to\s+/,""); }
+function vocabCorrect(user,accepted){
+  var u = normalize(user);
+  if(!u) return false;
+  var uNoTo = stripTo(u);
+  return accepted.some(function(a){
+    var an = normalize(a);
+    return an===u || an===uNoTo || stripTo(an)===u || stripTo(an)===uNoTo;
+  });
+}
+function escapeHtml(s){
+  return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});
+}
+function speak(text){
+  if(!("speechSynthesis" in window)) return;
+  try{
+    window.speechSynthesis.cancel();
+    var u = new SpeechSynthesisUtterance(text);
+    u.lang = "en-US"; u.rate = 0.92;
+    window.speechSynthesis.speak(u);
+  }catch(e){}
+}
+function letters(){ return ["A","B","C","D"]; }
+
+function updateScoreBadge(){
+  var badge = document.getElementById("scoreBadge");
+  if(!currentTest){ badge.style.display="none"; return; }
+  badge.style.display="";
+  var sc = testScore[currentTest];
+  badge.textContent = sc.correct+"/"+sc.total+" câu đúng";
+}
+
+/* ---------------- QUEUE BUILDERS ---------------- */
+
+function buildQueue(key){
+  var T = CT();
+  var st = sectionState[currentTest][key];
+  if(key==="vocab"){
+    var pool = T.vocab.filter(function(v){ return st.filters.units.indexOf(v.unit)>-1; });
+    return shuffle(pool).map(function(d){return {type:"vocab",data:d};});
+  }
+  if(key==="grammar"){
+    return shuffle(T.grammar).map(function(d){return {type:"mc",data:d};});
+  }
+  if(key==="structure"){
+    var pool2 = T.structure.filter(function(v){ return st.filters.units.indexOf(v.unit)>-1; });
+    return shuffle(pool2).map(function(d){return {type:"mc",data:d};});
+  }
+  if(key==="phonetic"){
+    var pool3 = T.phonetics.filter(function(v){ return st.filters.units.indexOf(v.unit)>-1; });
+    return shuffle(pool3).map(function(d){
+      var otherSyms = [];
+      Object.keys(T.phonPools).forEach(function(u){ if(Number(u)!==d.unit) otherSyms = otherSyms.concat(T.phonPools[u]); });
+      var distractors = shuffle(otherSyms).slice(0,3);
+      var opts = shuffle([d.sym].concat(distractors));
+      return {type:"phonetic",data:d,opts:opts,ans:opts.indexOf(d.sym)};
+    });
+  }
+  if(key==="translate"){
+    return shuffle(T.translation).map(function(d){return {type:"translate",data:d};});
+  }
+  return [];
+}
+
+/* ---------------- RENDER: SHELL ---------------- */
+
+function renderAll(){
+  renderTopbar();
+  renderBreadcrumb();
+  renderTabs();
+  renderPage();
+}
+
+function renderTopbar(){
+  var h1 = document.getElementById("appTitle");
+  var sub = document.getElementById("appSubtitle");
+  if(currentTest){
+    var T = CT();
+    h1.textContent = "Vở Ôn Tập — " + T.label;
+    sub.textContent = T.subtitle;
+  } else {
+    h1.textContent = "Vở Ôn Tập IELTS";
+    sub.textContent = "Chọn bài test bên dưới để bắt đầu ôn tập";
+  }
+  updateScoreBadge();
+}
+
+function renderBreadcrumb(){
+  var el = document.getElementById("breadcrumbRow");
+  if(!currentTest){ el.innerHTML = ""; return; }
+  el.innerHTML = '<button class="back-pill" id="backBtn">← Đổi bài test</button>';
+  document.getElementById("backBtn").addEventListener("click",function(){
+    currentTest = null;
+    renderAll();
+  });
+}
+
+/* ---------------- RENDER: HOME ---------------- */
+
+function homeHtml(){
+  var cards = TEST_ORDER.map(function(k){
+    var t = TESTS[k];
+    var locked = !t.available;
+    return (
+      '<button class="test-card'+(locked?" locked":"")+'" data-test="'+k+'"'+(locked?" disabled":"")+'>'+
+        '<span class="test-status '+(locked?"soon":"ready")+'">'+(locked?"Sắp có":"Sẵn sàng")+"</span>"+
+        '<span class="test-num">Test '+t.number+"</span>"+
+        '<p class="test-sub">'+escapeHtml(t.subtitle)+"</p>"+
+      "</button>"
+    );
+  }).join("");
+  return (
+    '<h2 class="section-title">Chọn bài Test cần ôn tập</h2>'+
+    '<p class="section-desc">Mỗi bài Test có đủ 5 phần: Từ Vựng, Ngữ Pháp, Cấu Trúc, Phiên Âm và Dịch Câu. Làm xong bài này rồi hẵng nghĩ tới bài tiếp theo nhé.</p>'+
+    '<div class="test-grid">'+cards+"</div>"
+  );
+}
+
+function bindHome(){
+  Array.prototype.forEach.call(document.querySelectorAll(".test-card:not(.locked)"),function(card){
+    card.addEventListener("click",function(){
+      var key = card.getAttribute("data-test");
+      ensureTestState(key);
+      currentTest = key;
+      activeTab = "vocab";
+      renderAll();
+    });
+  });
+}
+
+/* ---------------- RENDER: TABS ---------------- */
+
+function renderTabs(){
+  var el = document.getElementById("tabs");
+  if(!currentTest){ el.innerHTML = ""; return; }
+  el.innerHTML = SECTIONS.map(function(s){
+    return '<button class="tab'+(activeTab===s.key?" active":"")+'" data-tab="'+s.key+'">'+s.label+"</button>";
+  }).join("");
+  Array.prototype.forEach.call(el.querySelectorAll(".tab"),function(btn){
+    btn.addEventListener("click",function(){
+      activeTab = btn.getAttribute("data-tab");
+      renderTabs();
+      renderPage();
+    });
+  });
+}
+
+/* ---------------- RENDER: PAGE ---------------- */
+
+function renderPage(){
+  var pageWrap = document.getElementById("pageWrap");
+  var page = document.getElementById("page");
+
+  if(!currentTest){
+    pageWrap.classList.add("home");
+    page.innerHTML = homeHtml();
+    bindHome();
+    return;
+  }
+  pageWrap.classList.remove("home");
+
+  var key = activeTab;
+  var meta = SECTIONS.filter(function(s){return s.key===key;})[0];
+  var st = sectionState[currentTest][key];
+
+  if(st.phase==="setup"){ page.innerHTML = setupHtml(key,meta,st); bindSetup(key); return; }
+  if(st.phase==="quiz"){ page.innerHTML = quizHtml(key,meta,st); bindQuiz(key); return; }
+  if(st.phase==="summary"){ page.innerHTML = summaryHtml(key,meta,st); bindSummary(key); return; }
+}
+
+var UNIT_FILTER_SECTIONS = {vocab:true,structure:true,phonetic:true};
+
+function setupHtml(key,meta,st){
+  var T = CT();
+  var unitPicker = "";
+  if(UNIT_FILTER_SECTIONS[key]){
+    unitPicker =
+      '<p class="choose-hint">Hãy chọn (các) unit em muốn ôn rồi bấm “Bắt đầu” nhé!</p>'+
+      '<div class="chip-group" id="unitChips">'+
+        T.units.map(function(u){
+          var sel = st.filters.units.indexOf(u)>-1;
+          return '<button class="chip'+(sel?" selected":"")+'" data-val="'+u+'">'+T.unitLabel[u]+"</button>";
+        }).join("")+
+      "</div>";
+  }
+  var previewCount = buildQueue(key).length;
+  return (
+    '<h2 class="section-title">'+meta.label+"</h2>"+
+    '<p class="section-desc">'+meta.desc+"</p>"+
+    unitPicker+
+    '<div class="btn-row">'+
+      '<button class="btn btn-primary" id="startBtn"'+(previewCount===0?" disabled":"")+'>Bắt đầu ('+previewCount+" câu)</button>"+
+    "</div>"
+  );
+}
+
+function bindSetup(key){
+  var st = sectionState[currentTest][key];
+  var chipsWrap = document.getElementById("unitChips");
+  if(chipsWrap){
+    Array.prototype.forEach.call(chipsWrap.querySelectorAll(".chip"),function(chip){
+      chip.addEventListener("click",function(){
+        var val = Number(chip.getAttribute("data-val"));
+        var arr = st.filters.units;
+        var idx = arr.indexOf(val);
+        if(idx>-1){ if(arr.length>1) arr.splice(idx,1); }
+        else { arr.push(val); }
+        renderPage();
+      });
+    });
+  }
+  var startBtn = document.getElementById("startBtn");
+  if(startBtn){
+    startBtn.addEventListener("click",function(){
+      var queue = buildQueue(key);
+      if(queue.length===0) return;
+      st.queue = queue; st.idx=0; st.correct=0; st.wrong=[]; st.checked=false;
+      st.phase="quiz";
+      renderPage();
+    });
+  }
+}
+
+function quizHtml(key,meta,st){
+  var T = CT();
+  var item = st.queue[st.idx];
+  var total = st.queue.length;
+  var pct = Math.round((st.idx)/total*100);
+  var body = "";
+
+  if(item.type==="vocab"){
+    var d = item.data;
+    body =
+      '<span class="pos-tag">'+d.pos+'</span> <span class="pos-tag book-tag">'+T.bookLabel[d.book]+" · "+T.unitLabel[d.unit]+"</span>"+
+      '<p class="prompt-vn">'+escapeHtml(d.vn)+"</p>"+
+      '<input type="text" class="text-input" id="answerInput" placeholder="Gõ từ / cụm từ tiếng Anh…" autocomplete="off" autocapitalize="off" spellcheck="false">'+
+      '<div class="btn-row"><button class="btn btn-primary" id="checkBtn">Kiểm tra</button></div>'+
+      '<div id="feedbackArea"></div>';
+  } else if(item.type==="mc"){
+    var d2 = item.data;
+    var promptHtml = d2.q ? '<p class="prompt-sentence">'+escapeHtml(d2.q)+"</p>" :
+      '<p class="prompt-sentence">'+escapeHtml(d2.sent).replace("___",'<span class="blank">______</span>')+"</p>";
+    body =
+      (d2.topic ? '<span class="pos-tag">'+escapeHtml(d2.topic)+"</span>" : '<span class="pos-tag book-tag">GAF1 · '+T.unitLabel[d2.unit]+"</span>")+
+      promptHtml+
+      '<div class="mc-list" id="mcList">'+
+        d2.opts.map(function(o,i){
+          return '<button class="mc-opt" data-idx="'+i+'"><span class="letter">'+letters()[i]+".</span> "+escapeHtml(o)+"</button>";
+        }).join("")+
+      "</div>"+
+      '<div id="feedbackArea"></div>';
+  } else if(item.type==="phonetic"){
+    var d3 = item.data;
+    body =
+      '<span class="pos-tag book-tag">'+T.unitLabel[d3.unit]+'</span>'+
+      '<p class="prompt-sentence">Từ dưới đây chứa phiên âm nào?</p>'+
+      '<p class="prompt-word">'+escapeHtml(d3.w)+"</p>"+
+      '<div class="mc-list" id="mcList">'+
+        item.opts.map(function(o,i){
+          return '<button class="mc-opt" data-idx="'+i+'"><span class="letter">'+letters()[i]+".</span> /"+escapeHtml(o)+"/</button>";
+        }).join("")+
+      "</div>"+
+      '<div id="feedbackArea"></div>';
+  } else if(item.type==="translate"){
+    var d4 = item.data;
+    body =
+      '<span class="pos-tag">Dịch câu</span>'+
+      '<p class="prompt-vn">'+escapeHtml(d4.vn)+"</p>"+
+      '<textarea class="text-input" id="answerInput" placeholder="Gõ bản dịch tiếng Anh của bạn…"></textarea>'+
+      '<div class="btn-row"><button class="btn btn-primary" id="revealBtn">Xem đáp án mẫu</button></div>'+
+      '<div id="feedbackArea"></div>';
+  }
+
+  return (
+    '<h2 class="section-title">'+meta.label+"</h2>"+
+    '<div class="progress-row">'+
+      '<span class="progress-label">Câu '+(st.idx+1)+"/"+total+"</span>"+
+      '<div class="progress-track"><div class="progress-fill" style="width:'+pct+'%"></div></div>'+
+    "</div>"+
+    body
+  );
+}
+
+function feedbackHtml(isCorrect,answerText,explain,showSpeak){
+  var head = isCorrect ? "✓ Chính xác!" : "✗ Chưa đúng";
+  var cls = isCorrect ? "correct" : "incorrect";
+  return (
+    '<div class="feedback '+cls+'">'+
+      '<div class="feedback-head">'+head+"</div>"+
+      (answerText ? '<div class="feedback-answer">'+escapeHtml(answerText)+"</div>" : "")+
+      '<div class="feedback-explain">'+explain+"</div>"+
+      (showSpeak ? '<button class="speak-btn" id="speakBtn">🔊 Nghe cách đọc</button>' : "")+
+      '<div class="btn-row"><button class="btn btn-primary" id="nextBtn">Câu tiếp theo →</button></div>'+
+    "</div>"
+  );
+}
+
+function bindQuiz(key){
+  var st = sectionState[currentTest][key];
+  var item = st.queue[st.idx];
+  var testKeyAtBind = currentTest;
+
+  function goNext(){
+    st.idx++;
+    st.checked=false;
+    if(st.idx>=st.queue.length){ st.phase="summary"; }
+    renderPage();
+  }
+  function addScore(ok){
+    var sc = testScore[testKeyAtBind];
+    sc.total++; if(ok) sc.correct++;
+    if(ok) st.correct++;
+    updateScoreBadge();
+  }
+
+  if(item.type==="vocab"){
+    var input = document.getElementById("answerInput");
+    input.focus();
+    var checkBtn = document.getElementById("checkBtn");
+    function doCheck(){
+      if(st.checked) return;
+      st.checked = true;
+      var d = item.data;
+      var ok = vocabCorrect(input.value,d.en);
+      input.disabled = true; checkBtn.disabled = true;
+      if(!ok) st.wrong.push({q:d.vn,a:d.en[0]});
+      addScore(ok);
+      var fb = document.getElementById("feedbackArea");
+      fb.innerHTML = feedbackHtml(ok, "Đáp án: "+d.en.join(" / "), buildVocabExplain(d,ok), true);
+      document.getElementById("nextBtn").addEventListener("click",goNext);
+      var sp = document.getElementById("speakBtn");
+      if(sp) sp.addEventListener("click",function(){ speak(d.en[0]); });
+    }
+    checkBtn.addEventListener("click",doCheck);
+    input.addEventListener("keydown",function(e){ if(e.key==="Enter"){ e.preventDefault(); doCheck(); } });
+  }
+
+  if(item.type==="mc"){
+    var list = document.getElementById("mcList");
+    Array.prototype.forEach.call(list.querySelectorAll(".mc-opt"),function(btn){
+      btn.addEventListener("click",function(){
+        if(st.checked) return;
+        st.checked = true;
+        var idx = Number(btn.getAttribute("data-idx"));
+        var d = item.data;
+        var ok = idx===d.ans;
+        if(!ok) st.wrong.push({q:(d.q||d.sent),a:d.opts[d.ans]});
+        addScore(ok);
+        Array.prototype.forEach.call(list.querySelectorAll(".mc-opt"),function(b,i){
+          b.disabled = true;
+          if(i===d.ans) b.classList.add("correct");
+          else if(i===idx) b.classList.add("incorrect");
+        });
+        var explain = d.exp + (d.full ? '<br><br><span class="mono" style="opacity:.85">“'+escapeHtml(d.full)+'”</span>' : "");
+        var fb = document.getElementById("feedbackArea");
+        fb.innerHTML = feedbackHtml(ok, null, explain, false);
+        document.getElementById("nextBtn").addEventListener("click",goNext);
+      });
+    });
+  }
+
+  if(item.type==="phonetic"){
+    var list2 = document.getElementById("mcList");
+    Array.prototype.forEach.call(list2.querySelectorAll(".mc-opt"),function(btn){
+      btn.addEventListener("click",function(){
+        if(st.checked) return;
+        st.checked = true;
+        var idx = Number(btn.getAttribute("data-idx"));
+        var ok = idx===item.ans;
+        var d = item.data;
+        if(!ok) st.wrong.push({q:d.w,a:"/"+d.sym+"/"});
+        addScore(ok);
+        Array.prototype.forEach.call(list2.querySelectorAll(".mc-opt"),function(b,i){
+          b.disabled = true;
+          if(i===item.ans) b.classList.add("correct");
+          else if(i===idx) b.classList.add("incorrect");
+        });
+        var fb = document.getElementById("feedbackArea");
+        fb.innerHTML = feedbackHtml(ok, "/"+d.sym+"/", "Từ “"+d.w+"” chứa phiên âm trọng tâm /"+d.sym+"/ của "+CT().unitLabel[d.unit]+".", true);
+        document.getElementById("nextBtn").addEventListener("click",goNext);
+        var sp = document.getElementById("speakBtn");
+        if(sp) sp.addEventListener("click",function(){ speak(d.w); });
+      });
+    });
+  }
+
+  if(item.type==="translate"){
+    var ta = document.getElementById("answerInput");
+    ta.focus();
+    var revealBtn = document.getElementById("revealBtn");
+    revealBtn.addEventListener("click",function(){
+      if(st.checked) return;
+      st.checked = true;
+      var d = item.data;
+      ta.disabled = true; revealBtn.disabled = true;
+      var fb = document.getElementById("feedbackArea");
+      fb.innerHTML =
+        '<div class="feedback correct">'+
+          '<div class="feedback-head">Đáp án mẫu</div>'+
+          '<div class="feedback-answer">'+escapeHtml(d.en)+"</div>"+
+          '<div class="feedback-explain">'+escapeHtml(d.note)+"</div>"+
+          '<button class="speak-btn" id="speakBtn">🔊 Nghe câu mẫu</button>'+
+          '<div class="btn-row">'+
+            '<button class="btn btn-ghost" id="markWrong">Mình cần ôn lại câu này</button>'+
+            '<button class="btn btn-primary" id="markRight">Mình đã dịch đúng ý</button>'+
+          "</div>"+
+        "</div>";
+      document.getElementById("speakBtn").addEventListener("click",function(){ speak(d.en); });
+      document.getElementById("markRight").addEventListener("click",function(){
+        addScore(true); goNext();
+      });
+      document.getElementById("markWrong").addEventListener("click",function(){
+        st.wrong.push({q:d.vn,a:d.en}); addScore(false); goNext();
+      });
+    });
+  }
+}
+
+function buildVocabExplain(d,ok){
+  var T = CT();
+  var base = ok ? "Chuẩn rồi — nhớ kỹ nhé!" : "Chưa đúng, xem đáp án ở trên rồi ôn lại nha.";
+  return base + ' Cụm này thuộc <b>'+T.bookLabel[d.book]+" — "+T.unitLabel[d.unit]+"</b>.";
+}
+
+/* ---------------- SUMMARY ---------------- */
+
+function summaryHtml(key,meta,st){
+  var total = st.queue.length;
+  var list = st.wrong.length ?
+    '<ul class="summary-list">'+st.wrong.map(function(w){
+      return '<li class="summary-item">'+escapeHtml(w.q)+' → <b>'+escapeHtml(Array.isArray(w.a)?w.a[0]:w.a)+"</b></li>";
+    }).join("")+"</ul>"
+    : '<p class="summary-empty">Không sai câu nào — quá đỉnh!</p>';
+  return (
+    '<h2 class="section-title">Hoàn thành: '+meta.label+"</h2>"+
+    '<p class="summary-score">'+st.correct+" / "+total+" câu đúng</p>"+
+    '<p class="section-desc">Những câu cần ôn lại:</p>'+
+    list+
+    '<div class="btn-row">'+
+      '<button class="btn btn-primary" id="retryBtn">Làm lại phần này</button>'+
+      '<button class="btn btn-ghost" id="setupBtn">Về trang tổng quan</button>'+
+    "</div>"
+  );
+}
+
+function bindSummary(key){
+  var st = sectionState[currentTest][key];
+  document.getElementById("retryBtn").addEventListener("click",function(){
+    var queue = buildQueue(key);
+    st.queue=queue; st.idx=0; st.correct=0; st.wrong=[]; st.checked=false; st.phase="quiz";
+    renderPage();
+  });
+  document.getElementById("setupBtn").addEventListener("click",function(){
+    st.phase="setup"; renderPage();
+  });
+}
+
+/* ---------------- INIT ---------------- */
+
+renderAll();
+
+})();
+</script>
+
+</body>
+</html>
