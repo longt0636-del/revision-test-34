@@ -1138,19 +1138,80 @@ function shuffle(arr){
   }
   return a;
 }
-function normalize(s){
-  return String(s).toLowerCase().normalize("NFC").replace(/[.,!?;:"'’()]/g,"").replace(/\s+/g," ").trim();
+function normBase(s){
+  return String(s).toLowerCase().normalize("NFC").replace(/[.,!?;:"'’‘“”()]/g,"").replace(/\s+/g," ").trim();
 }
+function normalize(s){ return normBase(s).replace(/[-–—_]+/g," ").replace(/\s+/g," ").trim(); }
+function normTight(s){ return normBase(s).replace(/[-–—_]+/g,"").replace(/\s+/g," ").trim(); }
 function stripTo(s){ return s.replace(/^to\s+/,""); }
-function vocabCorrect(user,accepted){
-  var u = normalize(user);
-  if(!u) return false;
-  var uNoTo = stripTo(u);
+/* Mọi biến thể chấp nhận được của một chuỗi: bỏ dấu câu, coi gạch nối là khoảng trắng
+   HOẶC là liền nhau (e-mail = e mail = email), và bỏ "to" ở đầu (to educate = educate). */
+function answerForms(s){
+  var out = [];
+  [normalize(s), normTight(s)].forEach(function(n){
+    if(!n) return;
+    [n, stripTo(n)].forEach(function(v){ if(v && out.indexOf(v)<0) out.push(v); });
+  });
+  return out;
+}
+function matchesAny(part, accepted){
+  var pf = answerForms(part);
+  if(!pf.length) return false;
   return accepted.some(function(a){
-    var an = normalize(a);
-    return an===u || an===uNoTo || stripTo(an)===u || stripTo(an)===uNoTo;
+    return answerForms(a).some(function(x){ return pf.indexOf(x)>-1; });
   });
 }
+/* Đề kiểu "(2 cách nói)" khiến học sinh gõ CẢ HAI đáp án vào một ô
+   ("once in a blue moon / from time to time"). Ta dò các dấu ngăn có thể có... */
+function separatorSpans(s){
+  var re = /\s*[\/|;,&+–—]\s*|\s+(?:or|and|hoặc|và|hay)\s+/gi;
+  var out = [], m;
+  while((m = re.exec(s)) !== null){
+    if(m[0].length === 0){ re.lastIndex++; continue; }
+    out.push([m.index, m.index + m[0].length]);
+  }
+  return out;
+}
+/* ...rồi thử MỌI cách cắt: một dấu ngăn có thể là chỗ cắt, HOẶC là một phần của chính đáp án
+   ("husband and wife", "yes-or-no questions"). Chỉ cần tồn tại một cách cắt mà mọi mảnh đều
+   nằm trong danh sách đáp án thì tính đúng. */
+function segmentsMatch(s, accepted){
+  var seps = separatorSpans(s);
+  if(!seps.length || seps.length > 12) return false;
+  var found = false;
+  function walk(pos, si, cuts){
+    if(found) return;
+    if(si >= seps.length){
+      if(cuts >= 1 && matchesAny(s.slice(pos), accepted)) found = true;
+      return;
+    }
+    if(matchesAny(s.slice(pos, seps[si][0]), accepted)) walk(seps[si][1], si+1, cuts+1);
+    walk(pos, si+1, cuts);
+  }
+  walk(0, 0, 0);
+  return found;
+}
+function answerAccepted(user, accepted){
+  if(!Array.isArray(accepted)) accepted = [accepted];
+  if(!normalize(user)) return false;
+  /* 1) Gõ đúng MỘT cách nói — hành vi cũ, giữ nguyên. */
+  if(matchesAny(user, accepted)) return true;
+  /* 2) Liệt kê NHIỀU cách nói trong cùng một ô. Luật này chỉ NỚI THÊM,
+        không bao giờ biến một câu đang được chấm đúng thành sai. */
+  return segmentsMatch(String(user), accepted);
+}
+/* Hiện đáp án rõ ràng là CÁC CÁCH NÓI THAY THẾ, không phải một chuỗi phải gõ nguyên si. */
+function answerLine(list){
+  var arr = Array.isArray(list) ? list : [list];
+  if(arr.length < 2) return "Đáp án: " + arr[0];
+  return "Đáp án: " + arr[0] + " — cách nói khác cũng đúng: " + arr.slice(1).join(" / ");
+}
+function multiAnswerHint(list){
+  return (Array.isArray(list) && list.length > 1)
+    ? '<p style="font-size:.82rem;opacity:.7;margin:8px 0 0;line-height:1.5">💡 Từ này có nhiều cách nói đúng — gõ MỘT cách là được (gõ nhiều cách, ngăn bằng dấu <b>/</b>, cũng tính đúng).</p>'
+    : "";
+}
+function vocabCorrect(user,accepted){ return answerAccepted(user,accepted); }
 function escapeHtml(s){
   return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});
 }
@@ -1391,6 +1452,7 @@ function quizHtml(key,meta,st){
       '<span class="pos-tag">'+d.pos+'</span> <span class="pos-tag book-tag">'+T.bookLabel[d.book]+" · "+T.unitLabel[d.unit]+"</span>"+
       '<p class="prompt-vn">'+escapeHtml(d.vn)+"</p>"+
       '<input type="text" class="text-input" id="answerInput" placeholder="Gõ từ / cụm từ tiếng Anh…" autocomplete="off" autocapitalize="off" spellcheck="false">'+
+      multiAnswerHint(d.en)+
       '<div class="btn-row"><button class="btn btn-primary" id="checkBtn">Kiểm tra</button></div>'+
       '<div id="feedbackArea"></div>';
   } else if(item.type==="mc"){
@@ -1483,7 +1545,7 @@ function bindQuiz(key){
       if(!ok) st.wrong.push({q:d.vn,a:d.en[0]});
       addScore(ok);
       var fb = document.getElementById("feedbackArea");
-      fb.innerHTML = feedbackHtml(ok, "Đáp án: "+d.en.join(" / "), buildVocabExplain(d,ok), true);
+      fb.innerHTML = feedbackHtml(ok, answerLine(d.en), buildVocabExplain(d,ok), true);
       document.getElementById("nextBtn").addEventListener("click",goNext);
       var sp = document.getElementById("speakBtn");
       if(sp) sp.addEventListener("click",function(){ speak(d.en[0]); });
