@@ -257,6 +257,11 @@
     font-family:ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;
     font-size:1.7rem;font-weight:700;margin:0 0 18px;letter-spacing:0.01em;
   }
+  .prompt-word .phon-mark{
+    background:var(--accent-soft);color:var(--accent);
+    padding:1px 6px;border-radius:6px;
+    text-decoration:underline;text-underline-offset:4px;
+  }
   .prompt-sentence{font-size:1.08rem;margin:0 0 18px;line-height:1.6;max-width:56ch;}
   .prompt-sentence .blank{
     font-family:ui-monospace,"Cascadia Code",Consolas,Menlo,monospace;
@@ -1063,6 +1068,392 @@ var TRANSLATION_T2 = [
    note:"Cấu trúc: It was such a/an + adj + noun + that + clause."}
 ];
 
+/* ---------------- TEST 3 DATA ---------------- */
+
+var VOCAB_T3 = [
+  // Speaking Fundamentals — Unit 7 (Why do some people like X?)
+  {book:"SF",unit:7,pos:"expr",vn:"Ở mọi lứa tuổi / người ở mọi lứa tuổi",en:["people of all ages","of all ages"]},
+  {book:"SF",unit:7,pos:"adv",vn:"Đặc biệt là",en:["especially"]},
+  {book:"SF",unit:7,pos:"adj",vn:"Sáng tạo",en:["creative"]},
+  {book:"SF",unit:7,pos:"v",vn:"Tự thể hiện bản thân",en:["express themselves","express oneself","express myself"]},
+  {book:"SF",unit:7,pos:"v",vn:"Thử nghiệm (với cái gì)",en:["experiment","experiment with"]},
+  {book:"SF",unit:7,pos:"n",vn:"Món ăn",en:["dishes","dish"]},
+  {book:"SF",unit:7,pos:"n",vn:"Thành phần, nguyên liệu (của món ăn)",en:["ingredients","ingredient"]},
+  {book:"SF",unit:7,pos:"adj",vn:"Bảo thủ, không thích thay đổi",en:["conservative"]},
+  {book:"SF",unit:7,pos:"expr",vn:"Từ đầu, từ nguyên liệu thô",en:["from scratch"]},
+  {book:"SF",unit:7,pos:"adj",vn:"Làm cho ta thấy hài lòng, thỏa mãn",en:["satisfying"]},
+  {book:"SF",unit:7,pos:"v",vn:"Nấu cả một bữa ăn",en:["cook a whole meal"]},
+  {book:"SF",unit:7,pos:"expr",vn:"Từ đầu đến cuối",en:["from start to finish"]},
+  {book:"SF",unit:7,pos:"expr",vn:"Được ưa chuộng bởi (nhóm người nào đó)",en:["popular with","be popular with","to be popular with"]},
+  {book:"SF",unit:7,pos:"n",vn:"Người trung niên và người cao tuổi",en:["middle-aged and elderly people"]},
+  {book:"SF",unit:7,pos:"n",vn:"Việc làm vườn",en:["gardening"]},
+  {book:"SF",unit:7,pos:"adj",vn:"Làm cho ta thấy thoải mái, thư giãn",en:["relaxing"]},
+  {book:"SF",unit:7,pos:"n",vn:"Thế hệ",en:["generation"]},
+  {book:"SF",unit:7,pos:"adj",vn:"Kiên nhẫn",en:["patient"]},
+  {book:"SF",unit:7,pos:"adj",vn:"Năng động, tràn đầy năng lượng",en:["energetic"]},
+  {book:"SF",unit:7,pos:"v",vn:"Thư giãn sau khi bận rộn",en:["unwind"]},
+  {book:"SF",unit:7,pos:"adj",vn:"Tò mò",en:["curious"]},
+  {book:"SF",unit:7,pos:"adj",vn:"Chăm chỉ (2 cách nói)",en:["hard-working","studious"]},
+  {book:"SF",unit:7,pos:"adj",vn:"Hòa đồng",en:["sociable"]},
+  {book:"SF",unit:7,pos:"adj",vn:"Hướng về gia đình",en:["family-oriented"]},
+  {book:"SF",unit:7,pos:"n",vn:"Thế hệ cao tuổi",en:["the older generation","older generation"]},
+  {book:"SF",unit:7,pos:"adj",vn:"Nhiều thông tin, giàu kiến thức",en:["informative"]},
+  {book:"SF",unit:7,pos:"adj",vn:"Truyền cảm hứng",en:["inspiring"]},
+  {book:"SF",unit:7,pos:"adj",vn:"Xứng đáng với công sức bỏ ra",en:["rewarding"]},
+  {book:"SF",unit:7,pos:"v",vn:"Giữ liên lạc (với ai)",en:["stay in touch","stay in touch with"]},
+  {book:"SF",unit:7,pos:"v",vn:"Bắt kịp / cập nhật tin tức của ai",en:["catch up with","catch up"]},
+  {book:"SF",unit:7,pos:"v",vn:"Có đủ khả năng chi trả",en:["afford"]},
+  {book:"SF",unit:7,pos:"n",vn:"Căn hộ",en:["an apartment","apartment"]},
+  {book:"SF",unit:7,pos:"v",vn:"Mở mang đầu óc",en:["broaden one's mind","broaden my mind","broaden your mind","broaden their mind"]},
+  {book:"SF",unit:7,pos:"v",vn:"Tiếp cận với",en:["get access to"]},
+
+  // GAF1 — Unit 7 (Moving)
+  {book:"GAF",unit:7,pos:"n",vn:"Va li",en:["suitcase","a suitcase"]},
+  {book:"GAF",unit:7,pos:"n",vn:"Xe tải",en:["truck","a truck"]},
+  {book:"GAF",unit:7,pos:"v",vn:"Chở, kéo (đồ nặng) bằng xe",en:["haul"]},
+  {book:"GAF",unit:7,pos:"n",vn:"Xe tải chuyển nhà",en:["moving van","a moving van"]},
+  {book:"GAF",unit:7,pos:"n",vn:"Thùng container",en:["container","a container"]},
+  {book:"GAF",unit:7,pos:"n",vn:"Hàng hóa được vận chuyển (bằng tàu, xe, máy bay)",en:["cargo"]},
+
+  // Speaking Fundamentals — Unit 8 (When was the first/last time you did X?)
+  {book:"SF",unit:8,pos:"v",vn:"Đi nghỉ",en:["go on holiday","go on vacation"]},
+  {book:"SF",unit:8,pos:"n",vn:"Kỳ nghỉ hè",en:["the summer holiday","summer holiday"]},
+  {book:"SF",unit:8,pos:"adj",vn:"Gợi sự thích thú, gây tò mò",en:["intriguing"]},
+  {book:"SF",unit:8,pos:"n",vn:"Dân tộc thiểu số, nhóm thiểu số",en:["minority"]},
+  {book:"SF",unit:8,pos:"n",vn:"Văn hóa của dân tộc thiểu số",en:["minority culture"]},
+  {book:"SF",unit:8,pos:"v",vn:"Đi bộ đường dài và vất vả (dạng quá khứ)",en:["trekked"]},
+  {book:"SF",unit:8,pos:"expr",vn:"Háo hức làm gì, không thể chờ được",en:["can't wait to","cannot wait to"]},
+  {book:"SF",unit:8,pos:"expr",vn:"Lần cuối / lần tới",en:["the last time","the last time / next time","last time"]},
+  {book:"SF",unit:8,pos:"adv",vn:"Một cách bí mật",en:["secretly"]},
+  {book:"SF",unit:8,pos:"expr",vn:"Sắp xếp cho ai đó làm gì",en:["arrange for sb to do sth","arrange for somebody to do something","arrange for"]},
+  {book:"SF",unit:8,pos:"v",vn:"Đến nhà người khác ăn tối",en:["come over for dinner","come over for dinner and drinks"]},
+  {book:"SF",unit:8,pos:"expr",vn:"Không để ai làm gì / giữ cho ai không làm gì",en:["keep sb from doing sth","keep somebody from doing something","keep sb from"]},
+  {book:"SF",unit:8,pos:"adv",vn:"Chắc chắn là (2 cách nói)",en:["certainly","definitely"]},
+  {book:"SF",unit:8,pos:"expr",vn:"Một chút thách thức",en:["a bit of a challenge"]},
+  {book:"SF",unit:8,pos:"expr",vn:"Cuối cùng thì",en:["in the end"]},
+  {book:"SF",unit:8,pos:"expr",vn:"Mọi thứ diễn ra đúng theo dự định",en:["everything went to plan","go to plan"]},
+  {book:"SF",unit:8,pos:"v",vn:"Có một khoảng thời gian tuyệt vời",en:["have a great time","had a great time"]},
+  {book:"SF",unit:8,pos:"adj",vn:"Thú vị, đáng tận hưởng",en:["enjoyable"]},
+  {book:"SF",unit:8,pos:"adj",vn:"Đầy tính thách thức",en:["challenging"]},
+  {book:"SF",unit:8,pos:"adj",vn:"Gây xấu hổ",en:["embarrassing"]},
+  {book:"SF",unit:8,pos:"adj",vn:"Gây phiền hà, khó chịu",en:["annoying"]},
+  {book:"SF",unit:8,pos:"adj",vn:"Làm buồn lòng, làm khó chịu",en:["upsetting"]},
+  {book:"SF",unit:8,pos:"adj",vn:"Ngon",en:["delicious"]},
+  {book:"SF",unit:8,pos:"expr",vn:"Thành thật mà nói",en:["to be honest"]},
+  {book:"SF",unit:8,pos:"n",vn:"Các bài tập thể chất",en:["physical exercises","physical exercise"]},
+  {book:"SF",unit:8,pos:"n",vn:"Bạn cùng lớp",en:["classmate","classmates"]},
+  {book:"SF",unit:8,pos:"v",vn:"Ăn ngoài, đi ăn nhà hàng (2 cách nói)",en:["eat out","go out to eat"]},
+  {book:"SF",unit:8,pos:"v",vn:"Tập thể dục (cụm động từ, 2 cách nói)",en:["work out","exercise"]},
+  {book:"SF",unit:8,pos:"n",vn:"Trường tiểu học",en:["primary school"]},
+  {book:"SF",unit:8,pos:"v",vn:"Ăn một bữa lớn",en:["have a large meal"]},
+  {book:"SF",unit:8,pos:"adj",vn:"Quen với, quen thuộc với",en:["familiar with","be familiar with"]},
+  {book:"SF",unit:8,pos:"v",vn:"Chỉnh sửa văn bản",en:["edit a text","edit"]},
+  {book:"SF",unit:8,pos:"adj",vn:"Thừa cân / thiếu cân",en:["overweight / underweight","overweight","underweight"]},
+
+  // GAF1 — Unit 8 (Going On Vacation)
+  {book:"GAF",unit:8,pos:"n",vn:"Chuột túi (con vật ở Úc)",en:["kangaroo","a kangaroo"]},
+  {book:"GAF",unit:8,pos:"n",vn:"Hãng hàng không",en:["airline","an airline"]},
+  {book:"GAF",unit:8,pos:"adj",vn:"Khó chịu, không dễ chịu",en:["unpleasant"]},
+  {book:"GAF",unit:8,pos:"v",vn:"Giao (hàng) tận nơi",en:["deliver"]},
+  {book:"GAF",unit:8,pos:"n",vn:"Hành lý",en:["luggage"]},
+  {book:"GAF",unit:8,pos:"n",vn:"Mức giá hời, thỏa thuận tốt",en:["deal","a deal","a good deal"]},
+
+  // Speaking Fundamentals — Unit 9 (How has X changed?)
+  {book:"SF",unit:9,pos:"expr",vn:"Trong những năm gần đây",en:["in recent years"]},
+  {book:"SF",unit:9,pos:"expr",vn:"Không lâu trước kia",en:["not so long ago"]},
+  {book:"SF",unit:9,pos:"n",vn:"Các tòa nhà thấp tầng",en:["low rise buildings","low-rise buildings"]},
+  {book:"SF",unit:9,pos:"n",vn:"Các tòa nhà chung cư cao tầng",en:["tall apartment buildings"]},
+  {book:"SF",unit:9,pos:"adj",vn:"Chật, hẹp",en:["narrow"]},
+  {book:"SF",unit:9,pos:"adj",vn:"Rộng",en:["wide"]},
+  {book:"SF",unit:9,pos:"n",vn:"Chính quyền địa phương",en:["local government","the local government"]},
+  {book:"SF",unit:9,pos:"v",vn:"Thay thế cái gì bằng cái gì",en:["replace sth with sth","replace something with something","replace with"]},
+  {book:"SF",unit:9,pos:"n",vn:"Các tòa chung cư",en:["apartment buildings","apartment building"]},
+  {book:"SF",unit:9,pos:"n",vn:"Cơ sở vật chất",en:["facilities"]},
+  {book:"SF",unit:9,pos:"n",vn:"Trung tâm mua sắm",en:["shopping centre","shopping center","shopping centres","shopping centers"]},
+  {book:"SF",unit:9,pos:"v",vn:"Trồng cây",en:["plant trees"]},
+  {book:"SF",unit:9,pos:"n",vn:"Hàng ăn nhỏ, quán ăn nhỏ",en:["eateries","eatery"]},
+  {book:"SF",unit:9,pos:"v",vn:"Thay đổi rất nhiều (2 cách nói)",en:["change a lot","change a great deal"]},
+  {book:"SF",unit:9,pos:"expr",vn:"Khi tôi còn bé (2 cách nói)",en:["when i was young","when i was a kid"]},
+  {book:"SF",unit:9,pos:"expr",vn:"Nhiều loại, đa dạng những cái gì",en:["a wide range of"]},
+  {book:"SF",unit:9,pos:"v",vn:"Nằm dọc theo mọi con phố",en:["line every street"]},
+  {book:"SF",unit:9,pos:"adj",vn:"Thanh lịch, tao nhã",en:["elegant"]},
+  {book:"SF",unit:9,pos:"adj",vn:"Không có sự gần gũi, thiếu thân mật",en:["impersonal"]},
+  {book:"SF",unit:9,pos:"n",vn:"Điểm truy cập Wifi",en:["wifi hotspots","wifi hotspot"]},
+  {book:"SF",unit:9,pos:"adj",vn:"Trưởng thành",en:["mature"]},
+  {book:"SF",unit:9,pos:"adj",vn:"Có trách nhiệm",en:["responsible"]},
+  {book:"SF",unit:9,pos:"n",vn:"Kết nối Internet",en:["internet connection","an internet connection"]},
+  {book:"SF",unit:9,pos:"expr",vn:"Được kết nối Internet",en:["be connected to the internet","connected to the internet"]},
+  {book:"SF",unit:9,pos:"n",vn:"Dịch vụ tuyệt vời",en:["excellent services","excellent service"]},
+  {book:"SF",unit:9,pos:"expr",vn:"Nhờ vào điều gì đó",en:["thanks to sth","thanks to something","thanks to"]},
+  {book:"SF",unit:9,pos:"adj",vn:"Nhút nhát",en:["shy"]},
+  {book:"SF",unit:9,pos:"expr",vn:"Để lựa chọn (VD: nhiều thứ để chọn)",en:["to choose from","choose from"]},
+  {book:"SF",unit:9,pos:"adj",vn:"Tự tin",en:["confident"]},
+  {book:"SF",unit:9,pos:"expr",vn:"Có truy cập Internet",en:["have internet access","internet access"]},
+  {book:"SF",unit:9,pos:"n",vn:"Cơ sở vật chất hiện đại",en:["modern facilities"]},
+
+  // GAF1 — Unit 9 (A Family Cruise)
+  {book:"GAF",unit:9,pos:"expr",vn:"Trên tàu",en:["on board","board"]},
+  {book:"GAF",unit:9,pos:"n",vn:"Bờ biển, bãi bờ (nơi tàu cập vào)",en:["shore","the shore"]},
+  {book:"GAF",unit:9,pos:"n",vn:"Bóng chuyền",en:["volleyball"]},
+  {book:"GAF",unit:9,pos:"n",vn:"Hòn đảo",en:["island","an island"]},
+  {book:"GAF",unit:9,pos:"n",vn:"Bữa sáng",en:["breakfast"]},
+  {book:"GAF",unit:9,pos:"v",vn:"Khám phá",en:["explore"]}
+];
+
+var GRAMMAR_T3 = [
+  /* ----- Unit 7: Types of People · Personality & Activity Adjectives ----- */
+  {topic:"Types of People",q:"Nhóm từ nào chỉ TẦNG LỚP XÃ HỘI (social classes)?",
+   opts:["The working classes / the upper classes","Job seekers / office workers","Teenagers / adolescents","Single parents / couples"],ans:0,
+   exp:"Social classes = the working/middle/upper classes, rich/poor/homeless people, property owners. Job seekers & office workers thuộc nhóm nghề nghiệp; teenagers & adolescents thuộc nhóm tuổi."},
+  {topic:"Types of People",q:"Chọn câu đúng:",
+   opts:["Gardening is popular with elderly people.","Gardening is popular for elderly people.","Gardening popular with elderly people.","Elderly people are popular with gardening."],ans:0,
+   exp:"Cấu trúc: X (hoạt động) + be + popular WITH + nhóm người. Không dùng \"popular for\"."},
+  {topic:"Types of People",q:"Chọn câu đúng:",
+   opts:["People of all ages enjoy cooking.","People of all ages enjoy to cook.","People of all age enjoy cooking.","People of all ages enjoys cooking."],ans:0,
+   exp:"Type(s) of people + enjoy/like/love + V-ing hoặc danh từ. \"Enjoy\" không đi với \"to V\"; \"ages\" phải số nhiều; chủ ngữ số nhiều → \"enjoy\" không thêm -s."},
+  {topic:"Personality Adjectives",q:"Chọn tính từ HỢP NGHĨA: \"Dung loves hanging out with friends as he is a ___ person.\"",
+   opts:["sociable","patient","conservative","informative"],ans:0,
+   exp:"Thích đi chơi với bạn bè → \"sociable\" (hòa đồng). Đây chính là câu bẫy ở Hoạt động 3 — \"patient\" (kiên nhẫn) đúng ngữ pháp nhưng SAI nghĩa với ngữ cảnh."},
+  {topic:"Personality Adjectives",q:"Vị trí của tính từ tính cách — cặp câu nào ĐÚNG?",
+   opts:["He is a patient person. / He is patient.","He is a person patient. / He patient is.","He is patient person. / He is a patient.","He a patient person is. / He is patient a."],ans:0,
+   exp:"Tính từ đứng TRƯỚC danh từ chỉ người (a patient person) hoặc SAU động từ to be (He is patient)."},
+  {topic:"Activity Adjectives",q:"Chọn câu đúng:",
+   opts:["It is very satisfying to pass the test.","It is very satisfying pass the test.","It is very satisfy to pass the test.","It very satisfying is to pass the test."],ans:0,
+   exp:"Cấu trúc: It + be + activity adjective + TO V. (Cấu trúc còn lại: V-ing + be + a/an + adj + activity — \"Gardening is a very relaxing activity.\")"},
+  {topic:"Activity Adjectives",q:"Chọn cách nói LỢI ÍCH đúng:",
+   opts:["Gardening is a good way to unwind.","Gardening is a good way unwind.","Gardening is a good way for unwind.","Gardening is good way to unwinding."],ans:0,
+   exp:"X + to be a good way + TO V. Cấu trúc song song: X + provides + a great way + to V (Cooking provides a great way to express themselves)."},
+
+  /* ----- Unit 8: Prepositions of Time · Past Simple · Adjectives of Experience ----- */
+  {topic:"Prepositions of Time",q:"Chọn câu ĐÚNG:",
+   opts:["My birthday is on October 27th.","My birthday is in October 27th.","My birthday is at October 27th.","My birthday is during October 27th."],ans:0,
+   exp:"ON + ngày cụ thể; IN + tháng/mùa/năm (in December, in 2017). \"in June 15th\" là 1 trong 4 lỗi CẤM mắc."},
+  {topic:"Prepositions of Time",q:"Chọn câu đúng: \"Chúng tôi thường đi du lịch trong suốt mùa hè.\"",
+   opts:["We usually go on vacation during the summer.","We usually go on vacation on the summer.","We usually go on vacation at the summer.","We usually go on vacation during summers'."],ans:0,
+   exp:"DURING + mùa/lễ hội kéo dài (in the summer cũng đúng nhưng trung tính hơn). ❌ \"on the summer\"."},
+  {topic:"Prepositions of Time",q:"Chọn câu đúng:",
+   opts:["I didn't go to school last week.","I didn't go to school in last week.","I didn't went to school last week.","I don't go to school last week."],ans:0,
+   exp:"last week / next month / yesterday KHÔNG đi kèm giới từ; sau \"didn't\" động từ trở về nguyên thể."},
+  {topic:"Prepositions of Time",q:"Điền từ đúng: \"My family went to Sa Pa ___ two weeks.\"",
+   opts:["for","during","in","on"],ans:0,
+   exp:"FOR + khoảng thời gian kéo dài bao lâu (for two weeks, for three days)."},
+  {topic:"The Past Simple",q:"Chọn câu đúng:",
+   opts:["Did Jack go to an academy of music?","Did Jack went to an academy of music?","Did Jack goes to an academy of music?","Did Jack going to an academy of music?"],ans:0,
+   exp:"Bẫy số 1 khi thi: sau DID / DIDN'T, động từ TRỞ VỀ NGUYÊN THỂ."},
+  {topic:"The Past Simple",q:"Dạng quá khứ đúng của \"trek\" là?",
+   opts:["trekked","treked","trekt","treking"],ans:0,
+   exp:"Động từ 1 âm tiết tận cùng nguyên âm + phụ âm → GẤP ĐÔI phụ âm rồi thêm -ed: trek → trekked (giống plan → planned, hug → hugged)."},
+  {topic:"The Past Simple",q:"Cặp động từ bất quy tắc nào ĐÚNG?",
+   opts:["swim – swam","swim – swimmed","cost – costed","feel – feeled"],ans:0,
+   exp:"swim → swam. Nhóm \"không đổi\": cost → cost, cut → cut (❌ costed). feel → felt."},
+  {topic:"Adjectives of Experience",q:"Chọn dạng đúng: \"She was really ___ in the book about ancient Egypt.\"",
+   opts:["interested","interesting","interest","interestful"],ans:0,
+   exp:"Người BỊ TÁC ĐỘNG bởi cảm xúc → đuôi -ed (She was interested). Sự vật GÂY RA cảm xúc → đuôi -ing (The book was interesting)."},
+  {topic:"Adjectives of Experience",q:"Chọn câu đúng khi miêu tả một TRẢI NGHIỆM:",
+   opts:["It was an embarrassing experience.","It was an embarrassed experience.","It was a embarrassing experience.","It was embarrassing an experience."],ans:0,
+   exp:"Quy tắc vàng: miêu tả TRẢI NGHIỆM luôn dùng dạng -ing. Thêm nữa, \"an\" đứng trước từ bắt đầu bằng nguyên âm."},
+
+  /* ----- Unit 9: Present Perfect · Past vs Present · Comparatives ----- */
+  {topic:"The Present Perfect",q:"Chọn câu đúng:",
+   opts:["Mobile phones have become much more modern.","Mobile phones has become much more modern.","Mobile phones have became much more modern.","Mobile phones have become much modern more."],ans:0,
+   exp:"Chủ ngữ số nhiều (mobile phones) → HAVE; sau have/has phải dùng V3: become – became – become."},
+  {topic:"The Present Perfect",q:"Chọn câu đúng:",
+   opts:["Technology has changed a lot since I was a kid.","Technology have changed a lot since I was a kid.","Technology has change a lot since I was a kid.","Technology has changed a lot since I am a kid."],ans:0,
+   exp:"\"technology\" là danh từ không đếm được (số ít) → HAS; V3 = changed; mệnh đề \"since…\" chia Quá khứ đơn. Trạng từ mức độ: a lot / a great deal đứng SAU động từ."},
+  {topic:"The Present Perfect",q:"Cột V3 (quá khứ phân từ) của \"drive\" là?",
+   opts:["driven","drove","drived","driving"],ans:0,
+   exp:"drive – drove – driven. Thì Hiện tại hoàn thành BẮT BUỘC dùng cột V3, không dùng V2."},
+  {topic:"Past & Present Simple",q:"Chọn câu đúng:",
+   opts:["My town was small, but now it is quite big.","My town was small, but now it was quite big.","My town is small, but now it is quite big.","My town was small, but now it be quite big."],ans:0,
+   exp:"Cấu trúc đối lập mô tả thay đổi: S + V(quá khứ) …, but now S + V(hiện tại) …"},
+  {topic:"Past & Present Simple",q:"Chọn câu đúng:",
+   opts:["My grandfather worked as a farmer, but now he is retired and spends time with his grandchildren.","My grandfather worked as a farmer, but now he is retired and spend time with his grandchildren.","My grandfather worked as a farmer, but now he was retired and spends time with his grandchildren.","My grandfather works as a farmer, but now he is retired and spends time with his grandchildren."],ans:0,
+   exp:"CẢ HAI động từ ở vế hiện tại đều phải chia ngôi thứ 3 số ít: is … spends (không chỉ động từ đầu tiên)."},
+  {topic:"Comparatives",q:"Chọn câu đúng:",
+   opts:["The weather today is hotter than yesterday.","The weather today is more hot than yesterday.","The weather today is hoter than yesterday.","The weather today is more hotter than yesterday."],ans:0,
+   exp:"Tính từ 1 âm tiết → thêm -er (không dùng \"more\"); \"hot\" tận cùng nguyên âm + phụ âm nên gấp đôi chữ t → hotter."},
+  {topic:"Comparatives",q:"Chọn câu đúng:",
+   opts:["My new job is not as exciting as my previous one.","My new job is not as more exciting as my previous one.","My new job is not as exciting than my previous one.","My new job is not as exciting as more my previous one."],ans:0,
+   exp:"Cấu trúc phủ định: not as + adj + as — TUYỆT ĐỐI không thêm \"more\" vào giữa."},
+  {topic:"Comparatives",q:"Chọn câu đúng:",
+   opts:["There are fewer people in the park today than yesterday.","There are less people in the park today than yesterday.","There are fewer peoples in the park today than yesterday.","There is fewer people in the park today than yesterday."],ans:0,
+   exp:"\"people\" là danh từ ĐẾM ĐƯỢC → dùng FEWER. LESS chỉ dùng cho danh từ không đếm được (There is less vegetation than in the past)."},
+  {topic:"Comparatives",q:"Dạng so sánh hơn của \"good\" và \"bad\" là?",
+   opts:["better – worse","gooder – badder","more good – more bad","best – worst"],ans:0,
+   exp:"Tính từ bất quy tắc: good → better, bad → worse, far → farther/further. (best/worst là dạng so sánh NHẤT, không phải so sánh hơn.)"}
+];
+
+var STRUCTURE_T3 = [
+  /* ----- Unit 7 — GAF1 "Moving" (word bank 18 từ, 3 từ thừa: home / news / exciting) ----- */
+  {unit:7,sent:"Hey, Sheena! I haven't seen you for ages. What's ___? Where are you going with all those suitcases?",
+   opts:["new","home","news","exciting"],ans:0,
+   full:"Hey, Sheena! I haven't seen you for ages. What's new? Where are you going with all those suitcases?",
+   exp:"\"What's new?\" = \"Dạo này có gì mới?\" — câu chào hỏi thân mật khi lâu ngày gặp lại."},
+  {unit:7,sent:"It's been a while since the last ___ we ran into each other!",
+   opts:["time","moving","need","junk"],ans:0,
+   full:"It's been a while since the last time we ran into each other!",
+   exp:"\"the last time\" = lần cuối cùng; \"run into sb\" = tình cờ gặp ai đó."},
+  {unit:7,sent:"I'm bringing these suitcases home to pack because my ___ is preparing to move across the bay to Port Anderson.",
+   opts:["family","home","news","van"],ans:0,
+   full:"…because my family is preparing to move across the bay to Port Anderson.",
+   exp:"\"my family is preparing\" — family ở đây coi là một khối, động từ chia số ít."},
+  {unit:7,sent:"I considered hiring a moving ___, but someone told me it might be more convenient to rent a huge container.",
+   opts:["van","junk","home","news"],ans:0,
+   full:"I considered hiring a moving van, but someone told me it might be more convenient to rent a huge container.",
+   exp:"\"a moving van\" = xe tải chuyển nhà."},
+  {unit:7,sent:"Someone told me it might be more ___ to rent a huge container and ship everything across.",
+   opts:["convenient","interesting","exciting","massive"],ans:0,
+   full:"Someone told me it might be more convenient to rent a huge container and ship everything across.",
+   exp:"\"convenient\" = thuận tiện; so sánh hơn của tính từ dài dùng \"more + adj\"."},
+  {unit:7,sent:"The details are a bit complicated because we've got so ___ boxes!",
+   opts:["many","massive","heavy","new"],ans:0,
+   full:"The details are a bit complicated because we've got so many boxes!",
+   exp:"\"so many + danh từ đếm được số nhiều\" (boxes). Với danh từ không đếm được thì dùng \"so much\"."},
+  {unit:7,sent:"They sent all their furniture and ___ items by cargo flight.",
+   opts:["junk","many","new","home"],ans:0,
+   full:"They sent all their furniture and junk items by cargo flight.",
+   exp:"\"junk items\" = đồ lặt vặt, đồ linh tinh."},
+  {unit:7,sent:"Which day are you ___?",
+   opts:["moving","transport","haul","help"],ans:0,
+   full:"Which day are you moving?",
+   exp:"Hiện tại tiếp diễn (are you moving) diễn tả kế hoạch đã định trong tương lai gần."},
+  {unit:7,sent:"I've still got my small truck, so I can ___ stuff for you, too.",
+   opts:["haul","help","need","moving"],ans:0,
+   full:"I've still got my small truck, so I can haul stuff for you, too.",
+   exp:"\"haul\" = chở/kéo đồ nặng bằng xe; sau \"can\" là động từ nguyên thể."},
+
+  /* ----- Unit 8 — GAF1 "Going On Vacation" (word bank 18 từ, 4 từ thừa: sorry / watch / because / always) ----- */
+  {unit:8,sent:"Hey, Carl, I'm ___ to see you here!",
+   opts:["surprised","sorry","missing","always"],ans:0,
+   full:"Hey, Carl, I'm surprised to see you here!",
+   exp:"\"surprised\" — tính từ đuôi -ed vì NGƯỜI là người cảm thấy bất ngờ."},
+  {unit:8,sent:"Jeremy told me that you ___ on vacation.",
+   opts:["were","was","when","since"],ans:0,
+   full:"Jeremy told me that you were on vacation.",
+   exp:"Chủ ngữ \"you\" luôn đi với \"were\", không dùng \"was\"."},
+  {unit:8,sent:"Oh, I've wanted to go to Australia ever ___ I was little!",
+   opts:["since","when","because","always"],ans:0,
+   full:"Oh, I've wanted to go to Australia ever since I was little!",
+   exp:"\"ever since + mệnh đề quá khứ\" = kể từ khi… — đi kèm thì Hiện tại hoàn thành (I've wanted)."},
+  {unit:8,sent:"Tell me what it ___ like.",
+   opts:["was","were","works","watch"],ans:0,
+   full:"Tell me what it was like.",
+   exp:"Chủ ngữ \"it\" → \"was\". So sánh với ô \"you were\" ở trên — đây là bẫy chia to be ở quá khứ."},
+  {unit:8,sent:"It was fantastic! We fed kangaroos, walked through ___, and swam in the ocean.",
+   opts:["rainforests","relatives","pieces","news"],ans:0,
+   full:"We fed kangaroos, walked through rainforests, and swam in the ocean.",
+   exp:"\"rainforests\" = rừng nhiệt đới. Cả 3 động từ đều chia quá khứ song song: fed – walked – swam."},
+  {unit:8,sent:"My dad knows someone who ___ for Qantas Airlines, so we were able to get a good deal.",
+   opts:["works","was","watch","swam"],ans:0,
+   full:"My dad knows someone who works for Qantas Airlines, so we were able to get a good deal.",
+   exp:"Mệnh đề quan hệ \"who works for…\" — hiện tại đơn, chủ ngữ số ít nên thêm -s."},
+  {unit:8,sent:"The only ___ part of the trip was after we got home.",
+   opts:["unpleasant","surprised","missing","sorry"],ans:0,
+   full:"The only unpleasant part of the trip was after we got home.",
+   exp:"\"unpleasant\" = khó chịu, không dễ chịu — tính từ miêu tả trải nghiệm."},
+  {unit:8,sent:"So, the airline lost two ___ of luggage?",
+   opts:["pieces","relatives","rainforests","news"],ans:0,
+   full:"So, the airline lost two pieces of luggage?",
+   exp:"\"luggage\" là danh từ KHÔNG đếm được → phải đếm bằng \"two pieces of luggage\", không nói \"two luggages\"."},
+  {unit:8,sent:"Three days, but the good ___ is that when they finally found them, they delivered them right to our front door.",
+   opts:["news","pieces","trip","watch"],ans:0,
+   full:"…but the good news is that when they finally found them, they delivered them right to our front door.",
+   exp:"\"news\" là danh từ không đếm được, tuy có chữ \"s\" nhưng đi với động từ số ít: the good news IS…"},
+
+  /* ----- Unit 9 — GAF1 "A Family Cruise" (word bank 18 từ, 3 từ thừa: student / adult / holiday) ----- */
+  {unit:9,sent:"Family Cruise ___ is offering a new, exciting cruise that the whole family can enjoy!",
+   opts:["Line","Deal","Board","Variety"],ans:0,
+   full:"Family Cruise Line is offering a new, exciting cruise that the whole family can enjoy!",
+   exp:"\"Family Cruise Line\" là TÊN CÔNG TY tàu biển — \"line\" ở đây là danh từ, khác hẳn động từ \"line every street\" (nằm dọc theo phố) đã học ở phần từ vựng."},
+  {unit:9,sent:"…a new, exciting cruise that the ___ family can enjoy!",
+   opts:["whole","wide","favorite","adult"],ans:0,
+   full:"…a new, exciting cruise that the whole family can enjoy!",
+   exp:"\"the whole family\" = cả gia đình. (\"adult\" là một trong 3 từ thừa của word bank.)"},
+  {unit:9,sent:"We have a special ___ for families all year round on our Family Caribbean Cruise.",
+   opts:["deal","variety","line","holiday"],ans:0,
+   full:"We have a special deal for families all year round on our Family Caribbean Cruise.",
+   exp:"\"a special deal\" = một ưu đãi đặc biệt; \"all year round\" = quanh năm."},
+  {unit:9,sent:"On ___, we have a variety of great food for breakfast, lunch, and dinner.",
+   opts:["board","islands","line","time"],ans:0,
+   full:"On board, we have a variety of great food for breakfast, lunch, and dinner.",
+   exp:"\"on board\" = trên tàu — cụm cố định, không nói \"in board\"."},
+  {unit:9,sent:"We have a ___ of great food for breakfast, lunch, and dinner.",
+   opts:["variety","deal","wide","whole"],ans:0,
+   full:"We have a variety of great food for breakfast, lunch, and dinner.",
+   exp:"\"a variety of + danh từ\" = nhiều loại… (cùng nghĩa với \"a wide range of\" đã học ở phần từ vựng Unit 9)."},
+  {unit:9,sent:"For kids, we have shows each day with their ___ TV friends like Mickey Mouse, Goofy, and Elmo.",
+   opts:["favorite","whole","wide","television"],ans:0,
+   full:"…we have shows each day with their favorite TV friends like Mickey Mouse, Goofy, and Elmo.",
+   exp:"\"favorite\" là TÍNH TỪ đứng trước danh từ (favorite TV friends); \"television\" là danh từ dùng để ghép (television characters)."},
+  {unit:9,sent:"With four to seven hours on shore each day, you'll have plenty of time to ___ each island.",
+   opts:["explore","play","forget","board"],ans:0,
+   full:"With four to seven hours on shore each day, you'll have plenty of time to explore each island.",
+   exp:"\"explore\" = khám phá; sau \"time to\" là động từ nguyên thể."},
+  {unit:9,sent:"Does this ___ exciting? It is!",
+   opts:["sound","play","explore","forget"],ans:0,
+   full:"Does this sound exciting? It is!",
+   exp:"\"sound + tính từ\" = nghe có vẻ… Sau \"Does\" động từ trở về nguyên thể."},
+  {unit:9,sent:"It will be a trip your family will never ___!",
+   opts:["forget","explore","play","sound"],ans:0,
+   full:"It will be a trip your family will never forget!",
+   exp:"\"will never forget\" = sẽ không bao giờ quên; sau \"will\" là động từ nguyên thể."}
+];
+
+var PHON_POOLS_T3 = {
+  7:["m","n","ŋ","h"],
+  8:["s","z","r","w"],
+  9:["l","t","d"]
+};
+var PHONETICS_T3 = [
+  {unit:7,w:"time",mark:"m",sym:"m"},
+  {unit:7,w:"van",mark:"n",sym:"n"},
+  {unit:7,w:"many",mark:"n",sym:"n"},
+  {unit:7,w:"moving",mark:"ng",sym:"ŋ"},
+  {unit:7,w:"junk",mark:"n",sym:"ŋ"},
+  {unit:7,w:"heavy",mark:"h",sym:"h"},
+  {unit:8,w:"works",mark:"s",sym:"s"},
+  {unit:8,w:"since",mark:"s",sym:"s"},
+  {unit:8,w:"relatives",mark:"s",sym:"z"},
+  {unit:8,w:"news",mark:"s",sym:"z"},
+  {unit:8,w:"rainforests",mark:"r",sym:"r"},
+  {unit:8,w:"when",mark:"wh",sym:"w"},
+  {unit:9,w:"whole",mark:"l",sym:"l"},
+  {unit:9,w:"islands",mark:"l",sym:"l"},
+  {unit:9,w:"television",mark:"t",sym:"t"},
+  {unit:9,w:"favorite",mark:"t",sym:"t"},
+  {unit:9,w:"board",mark:"d",sym:"d"},
+  {unit:9,w:"wide",mark:"d",sym:"d"}
+];
+
+/* Dịch Câu — nội dung MỚI, chỉ luyện đúng những điểm ngữ pháp của Unit 7–9,
+   KHÔNG dùng lại câu trong đề thi thật (tránh học sinh học vẹt đáp án). */
+var TRANSLATION_T3 = [
+  {vn:"Nấu ăn được ưa chuộng bởi những người sáng tạo.",
+   en:"Cooking is popular with creative people.",
+   note:"Unit 7 — X + be popular WITH + nhóm người (không dùng \"popular for\")."},
+  {vn:"Thật sự rất bổ ích khi học chơi một loại nhạc cụ mới.",
+   en:"It is very rewarding to learn a new musical instrument.",
+   note:"Unit 7 — It + be + activity adjective + to V."},
+  {vn:"Tôi thường về quê trong suốt kỳ nghỉ Tết.",
+   en:"I usually go back to my hometown during the Tet holiday.",
+   note:"Unit 8 — DURING + kỳ nghỉ/lễ hội kéo dài (❌ \"on the Tet holiday\")."},
+  {vn:"Tháng trước bố tôi đã mua một chiếc xe máy mới.",
+   en:"My father bought a new motorbike last month.",
+   note:"Unit 8 — Quá khứ đơn với động từ bất quy tắc (buy → bought); \"last month\" KHÔNG đi kèm giới từ."},
+  {vn:"Lần đầu tiên tôi nấu ăn cho cả gia đình là cách đây khoảng hai năm.",
+   en:"The first time I cooked for my whole family was about two years ago.",
+   note:"Unit 8 — Khung câu: The first/last time I + V(quá khứ) + was + [mốc thời gian]; about … ago."},
+  {vn:"Trường của tôi đã thay đổi rất nhiều kể từ khi tôi vào lớp 6.",
+   en:"My school has changed a lot since I started grade 6.",
+   note:"Unit 9 — Hiện tại hoàn thành (has + V3) + \"a lot\"; mệnh đề \"since…\" chia Quá khứ đơn."},
+  {vn:"Ngày xưa chúng tôi đi bộ đến trường, nhưng bây giờ hầu hết học sinh đi xe đạp.",
+   en:"In the past we walked to school, but now most students ride bicycles.",
+   note:"Unit 9 — S + V(quá khứ) …, but now S + V(hiện tại) … Chú ý \"most students\" (danh từ chung, không có \"of\")."},
+  {vn:"Ngày nay có ít hiệu sách hơn so với mười năm trước.",
+   en:"There are fewer bookshops today than ten years ago.",
+   note:"Unit 9 — There are FEWER + danh từ đếm được + than + [mốc thời gian trong quá khứ] (❌ \"less bookshops\")."}
+];
+
 /* ---------------- TESTS REGISTRY ---------------- */
 
 var TESTS = {
@@ -1085,10 +1476,14 @@ var TESTS = {
     phonPools:PHON_POOLS_T2, phonetics:PHONETICS_T2, translation:TRANSLATION_T2
   },
   test3:{
-    number:"3", label:"Test 3", available:false,
-    subtitle:"Đang cập nhật nội dung",
-    units:[], bookLabel:{}, unitLabel:{},
-    vocab:[], grammar:[], structure:[], phonPools:{}, phonetics:[], translation:[]
+    number:"3", label:"Test 3", available:true,
+    subtitle:"Speaking Fundamentals & GAF1 · Unit 7–9",
+    units:[7,8,9],
+    bookLabel:{SF:"Speaking Fundamentals",GAF:"GAF1"},
+    unitLabel:{7:"Unit 7",8:"Unit 8",9:"Unit 9"},
+    phonOwnPool:true,
+    vocab:VOCAB_T3, grammar:GRAMMAR_T3, structure:STRUCTURE_T3,
+    phonPools:PHON_POOLS_T3, phonetics:PHONETICS_T3, translation:TRANSLATION_T3
   }
 };
 var TEST_ORDER = ["test1","test2","test3"];
@@ -1215,6 +1610,15 @@ function vocabCorrect(user,accepted){ return answerAccepted(user,accepted); }
 function escapeHtml(s){
   return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});
 }
+/* In đậm đoạn chữ đang được hỏi trong một từ (dùng cho phần Phiên Âm của Test 3).
+   d.w luôn giữ nguyên dạng thường để nút loa đọc đúng; d.mark là đoạn chữ cần tô. */
+function markedWordHtml(d){
+  if(!d.mark) return escapeHtml(d.w);
+  var i = String(d.w).toLowerCase().indexOf(String(d.mark).toLowerCase());
+  if(i < 0) return escapeHtml(d.w);
+  var w = String(d.w);
+  return escapeHtml(w.slice(0,i))+"<b class=\"phon-mark\">"+escapeHtml(w.slice(i,i+d.mark.length))+"</b>"+escapeHtml(w.slice(i+d.mark.length));
+}
 function speak(text){
   if(!("speechSynthesis" in window)) return;
   try{
@@ -1253,10 +1657,17 @@ function buildQueue(key){
   if(key==="phonetic"){
     var pool3 = T.phonetics.filter(function(v){ return st.filters.units.indexOf(v.unit)>-1; });
     return shuffle(pool3).map(function(d){
-      var otherSyms = [];
-      Object.keys(T.phonPools).forEach(function(u){ if(Number(u)!==d.unit) otherSyms = otherSyms.concat(T.phonPools[u]); });
-      var distractors = shuffle(otherSyms).slice(0,3);
-      var opts = shuffle([d.sym].concat(distractors));
+      var opts;
+      if(T.phonOwnPool){
+        /* Test 3 học phụ âm: các lựa chọn chính là 3–4 âm mục tiêu của cùng Unit,
+           để học sinh phải phân biệt đúng cặp dễ nhầm (/n/ vs /ŋ/, /s/ vs /z/, /t/ vs /d/). */
+        opts = shuffle((T.phonPools[d.unit]||[d.sym]).slice());
+      } else {
+        var otherSyms = [];
+        Object.keys(T.phonPools).forEach(function(u){ if(Number(u)!==d.unit) otherSyms = otherSyms.concat(T.phonPools[u]); });
+        var distractors = shuffle(otherSyms).slice(0,3);
+        opts = shuffle([d.sym].concat(distractors));
+      }
       return {type:"phonetic",data:d,opts:opts,ans:opts.indexOf(d.sym)};
     });
   }
@@ -1472,8 +1883,8 @@ function quizHtml(key,meta,st){
     var d3 = item.data;
     body =
       '<span class="pos-tag book-tag">'+T.unitLabel[d3.unit]+'</span>'+
-      '<p class="prompt-sentence">Từ dưới đây chứa phiên âm nào?</p>'+
-      '<p class="prompt-word">'+escapeHtml(d3.w)+"</p>"+
+      '<p class="prompt-sentence">'+(d3.mark ? "Phần in đậm trong từ dưới đây được phát âm là âm nào?" : "Từ dưới đây chứa phiên âm nào?")+'</p>'+
+      '<p class="prompt-word">'+markedWordHtml(d3)+"</p>"+
       '<div class="mc-list" id="mcList">'+
         item.opts.map(function(o,i){
           return '<button class="mc-opt" data-idx="'+i+'"><span class="letter">'+letters()[i]+".</span> /"+escapeHtml(o)+"/</button>";
@@ -1595,7 +2006,10 @@ function bindQuiz(key){
           else if(i===idx) b.classList.add("incorrect");
         });
         var fb = document.getElementById("feedbackArea");
-        fb.innerHTML = feedbackHtml(ok, "/"+d.sym+"/", "Từ “"+d.w+"” chứa phiên âm trọng tâm /"+d.sym+"/ của "+CT().unitLabel[d.unit]+".", true);
+        var phonExp = d.mark
+          ? "Trong từ “"+d.w+"”, phần “"+d.mark+"” được phát âm là /"+d.sym+"/ — một trong các âm mục tiêu của "+CT().unitLabel[d.unit]+"."
+          : "Từ “"+d.w+"” chứa phiên âm trọng tâm /"+d.sym+"/ của "+CT().unitLabel[d.unit]+".";
+        fb.innerHTML = feedbackHtml(ok, "/"+d.sym+"/", phonExp, true);
         document.getElementById("nextBtn").addEventListener("click",goNext);
         var sp = document.getElementById("speakBtn");
         if(sp) sp.addEventListener("click",function(){ speak(d.w); });
