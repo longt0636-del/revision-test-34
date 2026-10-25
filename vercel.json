@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "revision-test-34.vercel.app" }],
+      "destination": "https://revision-test-34.longielts.workers.dev/$1",
+      "permanent": false
+    }
+  ]
+}
